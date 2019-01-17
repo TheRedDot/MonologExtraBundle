@@ -1,5 +1,5 @@
 {
-    "name": "hexanet/monolog-extra-bundle",
+    "name": "thereddot/monolog-extra-bundle",
     "type": "symfony-bundle",
     "description": "Symfony bundle with extra processors and logger to log request/response",
     "keywords": ["log", "logging"],
@@ -12,7 +12,7 @@
     "authors": [
         {
             "name": "Floran Brutel",
-            "email": "fbrutel@hexanet.fr"
+            "email": "bonjour@floran.fr"
         }
     ],
     "require": {
@@ -35,5 +35,8 @@
         "branch-alias": {
             "dev-master": "3.0-dev"
         }
+    },
+    "replace": {
+        "hexanet/monolog-extra-bundle": "self.version"
     }
 }

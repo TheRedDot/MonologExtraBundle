@@ -1,6 +1,6 @@
 # MonologExtraBundle
 
-[![Build Status](https://api.travis-ci.org/Hexanet/MonologExtraBundle.svg)](http://travis-ci.org/Hexanet/MonologExtraBundle) 	[![Total Downloads](https://poser.pugx.org/hexanet/monolog-extra-bundle/downloads.png)](https://packagist.org/packages/hexanet/monolog-extra-bundle) [![Latest stable Version](https://poser.pugx.org/hexanet/monolog-extra-bundle/v/stable.png)](https://packagist.org/packages/hexanet/monolog-extra-bundle)
+[![Build Status](https://api.travis-ci.org/TheRedDot/MonologExtraBundle.svg)](http://travis-ci.org/TheRedDot/MonologExtraBundle) 	[![Total Downloads](https://poser.pugx.org/TheRedDot/monolog-extra-bundle/downloads.png)](https://packagist.org/packages/TheRedDot/monolog-extra-bundle) [![Latest stable Version](https://poser.pugx.org/TheRedDot/monolog-extra-bundle/v/stable.png)](https://packagist.org/packages/TheRedDot/monolog-extra-bundle)
 
 Symfony bundle with extra processors and logger to log request/response.
 
@@ -11,7 +11,7 @@ Symfony bundle with extra processors and logger to log request/response.
 Open a command console, enter your project directory and execute:
 
 ```console
-$ composer require hexanet/monolog-extra-bundle
+$ composer require thereddot/monolog-extra-bundle
 ```
 
 ### Applications that don't use Symfony Flex
@@ -172,8 +172,8 @@ X-UID: 57c5f5e842b10
 
 ## Credits
 
-Developed by [Hexanet](http://www.hexanet.fr/).
+Forked from [Hexanet/MonologExtraBundle](https://github.com/Hexanet/MonologExtraBundle).
 
 ## License
 
-[MonologExtraBundle](https://github.com/Hexanet/MonologExtraBundle) is licensed under the [MIT license](LICENSE).
+[MonologExtraBundle](https://github.com/TheRedDot/MonologExtraBundle) is licensed under the [MIT license](LICENSE).
