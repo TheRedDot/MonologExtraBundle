@@ -11,9 +11,9 @@ class RequestIdProcessor
      */
     protected $requestIdProvider;
 
-    public function __construct(RequestIdProviderInterface $uidProvider)
+    public function __construct(RequestIdProviderInterface $requestIdProvider)
     {
-        $this->requestIdProvider = $uidProvider;
+        $this->requestIdProvider = $requestIdProvider;
     }
 
     public function processRecord(array $record) : array

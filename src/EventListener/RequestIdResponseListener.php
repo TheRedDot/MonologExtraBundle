@@ -12,9 +12,9 @@ class RequestIdResponseListener
      */
     protected $requestIdProvider;
 
-    public function __construct(RequestIdProviderInterface $uidProvider)
+    public function __construct(RequestIdProviderInterface $requestIdProvider)
     {
-        $this->requestIdProvider = $uidProvider;
+        $this->requestIdProvider = $requestIdProvider;
     }
 
     public function onKernelResponse(FilterResponseEvent $event) : void
