@@ -2,16 +2,13 @@
 
 namespace Hexanet\Common\MonologExtraBundle\Provider\RequestId;
 
-class ApacheUniqueIdProvider implements RequestIdProviderInterface
+final class ApacheUniqueIdProvider implements RequestIdProviderInterface
 {
     /**
      * @var string
      */
-    protected $requestId;
+    private $requestId;
 
-    /**
-     * @param array|null $serverData
-     */
     public function __construct(array $serverData = null)
     {
         $requestId = uniqid();

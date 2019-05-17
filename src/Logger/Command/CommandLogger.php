@@ -14,21 +14,11 @@ class CommandLogger implements CommandLoggerInterface
      */
     protected $logger;
 
-    /**
-     * Construct
-     *
-     * @param LoggerInterface $logger Logger
-     */
     public function __construct(LoggerInterface $logger)
     {
         $this->logger = $logger;
     }
 
-    /**
-     * @param Command $command
-     * @param InputInterface $input
-     * @param OutputInterface $output
-     */
     public function logCommand(Command $command, InputInterface $input, OutputInterface $output) : void
     {
         $msg = sprintf(
@@ -39,13 +29,6 @@ class CommandLogger implements CommandLoggerInterface
         $this->logger->info($msg, $this->createContexts($command, $input, $output));
     }
 
-    /**
-     * @param Command $command
-     * @param InputInterface $input
-     * @param OutputInterface $output
-     *
-     * @return array
-     */
     public function createContexts(Command $command, InputInterface $input, OutputInterface $output) : array
     {
         $map = array(

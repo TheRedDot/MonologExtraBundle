@@ -12,17 +12,11 @@ class RequestIdResponseListener
      */
     protected $requestIdProvider;
 
-    /**
-     * @param RequestIdProviderInterface $uidProvider
-     */
     public function __construct(RequestIdProviderInterface $uidProvider)
     {
         $this->requestIdProvider = $uidProvider;
     }
 
-    /**
-     * @param FilterResponseEvent $event
-     */
     public function onKernelResponse(FilterResponseEvent $event) : void
     {
         $event->getResponse()->headers->set('X-Request-ID', $this->requestIdProvider->getRequestId());

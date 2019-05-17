@@ -2,12 +2,12 @@
 
 namespace Hexanet\Common\MonologExtraBundle\Provider\RequestId;
 
-class UniqidProvider implements RequestIdProviderInterface
+final class UniqidProvider implements RequestIdProviderInterface
 {
     /**
      * @var string
      */
-    protected $requestId;
+    private $requestId;
 
     public function __construct()
     {

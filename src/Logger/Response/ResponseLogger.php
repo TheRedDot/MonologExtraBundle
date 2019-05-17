@@ -13,20 +13,11 @@ class ResponseLogger implements ResponseLoggerInterface
      */
     protected $logger;
 
-    /**
-     * Construct
-     *
-     * @param LoggerInterface $logger Logger
-     */
     public function __construct(LoggerInterface $logger)
     {
         $this->logger = $logger;
     }
 
-    /**
-     * @param Response $response
-     * @param Request  $request
-     */
     public function logResponse(Response $response, Request $request) : void
     {
         $msg = sprintf(
@@ -39,9 +30,6 @@ class ResponseLogger implements ResponseLoggerInterface
         $this->logger->info($msg, $this->createContext($response, $request));
     }
 
-    /**
-     * @return int
-     */
     public function getMemory() : int
     {
         $memory = memory_get_peak_usage(true);
@@ -50,11 +38,6 @@ class ResponseLogger implements ResponseLoggerInterface
         return $memory;
     }
 
-    /**
-     * @param Request $request
-     *
-     * @return float|null
-     */
     public function getTime(Request $request) : ?float
     {
         if (!$request->server) {
@@ -71,12 +54,6 @@ class ResponseLogger implements ResponseLoggerInterface
         return (float) $time;
     }
 
-    /**
-     * @param Response $response
-     * @param Request  $request
-     *
-     * @return array
-     */
     protected function createContext(Response $response, Request $request) : array
     {
         $context =  array(

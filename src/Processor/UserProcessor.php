@@ -14,19 +14,11 @@ class UserProcessor
      */
     protected $userProvider;
 
-    /**
-     * @param UserProviderInterface $userProvider
-     */
     public function __construct(UserProviderInterface $userProvider)
     {
         $this->userProvider = $userProvider;
     }
 
-    /**
-     * @param array $record
-     *
-     * @return array
-     */
     public function processRecord(array $record) : array
     {
         $record['extra']['user'] = $this->userProvider->getUser();
