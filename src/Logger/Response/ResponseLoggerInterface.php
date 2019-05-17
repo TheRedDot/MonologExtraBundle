@@ -7,10 +7,6 @@ use Symfony\Component\HttpFoundation\Response;
 
 interface ResponseLoggerInterface
 {
-    /**
-     * @param Response $response
-     * @param Request  $request
-     */
     public function logResponse(Response $response, Request $request) : void;
 
 }

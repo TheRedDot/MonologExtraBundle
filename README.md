@@ -61,8 +61,8 @@ class AppKernel extends Kernel
 The bundle provides several processors:
 
 * User
-* Session ID
-* UID
+* Session id
+* Request id
 * Additions
 
 #### User
@@ -88,7 +88,7 @@ hexanet_monolog_extra:
         user: your_own_provider_service_id
 ```
 
-#### Session ID
+#### Session id
 
 Add the session id in each log entry.
 
@@ -106,14 +106,14 @@ hexanet_monolog_extra:
         session_id: your_own_provider_service_id
 ```
 
-#### UID
+#### Request id
 
-Add an unique identifier for the request in each log entry.
+Add the request id for the request in each log entry.
 
 ```yaml
 hexanet_monolog_extra:
     processor:
-        uid: true
+        request_id: true
 ```
 
 The bundle comes with 2 providers:
@@ -121,12 +121,12 @@ The bundle comes with 2 providers:
 * UniqidProvider (default): use `uniqid`
 * ApacheUniqueIdProvider: get from environment, need [*mod_unique_id*](https://httpd.apache.org/docs/2.4/mod/mod_unique_id.html) of Apache
 
-You can create your own provider by creating a service that implements *Hexanet\Common\MonologExtraBundle\Provider\Uid\UidProviderInterface*.
+You can create your own provider by creating a service that implements *Hexanet\Common\MonologExtraBundle\Provider\RequestId\RequestIdProviderInterface*.
 
 ```yaml
 hexanet_monolog_extra:
     provider:
-        uid: your_own_provider_service_id
+        request_id: your_own_provider_service_id
 ```
 
 #### Additions
@@ -157,13 +157,13 @@ Create a log entry with the response data.
 
 Create a log entry when an exception occurs in console.
 
-#### Add UID to response
+#### Add request id to response
 
-Add the UID of the previous processor in the response headers.
+Add the request id of the previous processor in the response headers.
 
 ```
 HTTP/1.1 302 Found
-X-UID: 57c5f5e842b10
+X-Request-ID: 57c5f5e842b10
 ```
 
 ## Configuration reference

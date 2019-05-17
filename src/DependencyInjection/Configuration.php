@@ -3,7 +3,7 @@
 namespace Hexanet\Common\MonologExtraBundle\DependencyInjection;
 
 use Hexanet\Common\MonologExtraBundle\Provider\Session\SymfonySessionIdProvider;
-use Hexanet\Common\MonologExtraBundle\Provider\Uid\UniqidProvider;
+use Hexanet\Common\MonologExtraBundle\Provider\RequestId\UniqidProvider;
 use Hexanet\Common\MonologExtraBundle\Provider\User\SymfonyUserProvider;
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
@@ -32,8 +32,8 @@ class Configuration implements ConfigurationInterface
                             ->info("Adds session id into records")
                             ->defaultFalse()
                         ->end()
-                        ->scalarNode('uid')
-                            ->info("Adds UID into records")
+                        ->scalarNode('request_id')
+                            ->info("Adds request ID into records")
                             ->defaultFalse()
                         ->end()
                         ->arrayNode('additions')
@@ -55,7 +55,7 @@ class Configuration implements ConfigurationInterface
                             ->info("Provider for session id")
                             ->defaultValue(SymfonySessionIdProvider::class)
                         ->end()
-                        ->scalarNode('uid')
+                        ->scalarNode('request_id')
                             ->info("Provider for uid")
                             ->defaultValue(UniqidProvider::class)
                         ->end()
@@ -72,7 +72,7 @@ class Configuration implements ConfigurationInterface
                         ->scalarNode('on_response')->defaultFalse()->end()
                         ->scalarNode('on_command')->defaultFalse()->end()
                         ->scalarNode('on_console_exception')->defaultTrue()->end()
-                        ->scalarNode('add_uid_to_response')->defaultFalse()->end()
+                        ->scalarNode('add_request_id_to_response')->defaultFalse()->end()
                     ->end()
                 ->end()
             ->end();

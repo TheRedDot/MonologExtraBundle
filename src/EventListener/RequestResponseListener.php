@@ -15,25 +15,17 @@ class RequestResponseListener
      */
     protected $requestLogger;
 
-
     /**
      * @var ResponseLoggerInterface
      */
     protected $responseLogger;
 
-    /**
-     * @param RequestLoggerInterface  $requestLogger
-     * @param ResponseLoggerInterface $responseLogger
-     */
     public function __construct(RequestLoggerInterface $requestLogger, ResponseLoggerInterface $responseLogger)
     {
         $this->requestLogger = $requestLogger;
         $this->responseLogger = $responseLogger;
     }
 
-    /**
-     * @param GetResponseEvent $event
-     */
     public function onRequest(GetResponseEvent $event) : void
     {
         if (HttpKernel::MASTER_REQUEST !== $event->getRequestType()) {
@@ -43,9 +35,6 @@ class RequestResponseListener
         $this->requestLogger->logRequest($event->getRequest());
     }
 
-    /**
-     * @param FilterResponseEvent $event
-     */
     public function onResponse(FilterResponseEvent $event) : void
     {
         $this->responseLogger->logResponse($event->getResponse(), $event->getRequest());

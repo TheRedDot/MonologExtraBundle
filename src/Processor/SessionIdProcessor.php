@@ -14,19 +14,11 @@ class SessionIdProcessor
      */
     protected $sessionIdProvider;
 
-    /**
-     * @param SessionIdProviderInterface $sessionIdProvider
-     */
     public function __construct(SessionIdProviderInterface $sessionIdProvider)
     {
         $this->sessionIdProvider = $sessionIdProvider;
     }
 
-    /**
-     * @param array $record
-     *
-     * @return array
-     */
     public function processRecord(array $record) : array
     {
         $record['extra']['session_id'] = $this->sessionIdProvider->getSessionId();

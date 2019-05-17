@@ -4,33 +4,26 @@ namespace Hexanet\Common\MonologExtraBundle\Provider\Session;
 
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 
-class SymfonySessionIdProvider implements SessionIdProviderInterface
+final class SymfonySessionIdProvider implements SessionIdProviderInterface
 {
     const SESSION_ID_UNKNOWN = 'unknown';
 
     /**
      * @var SessionInterface
      */
-    protected $session;
+    private $session;
 
     /**
      * @var bool
      */
-    protected $startSession;
+    private $startSession;
 
-    /**
-     * @param SessionInterface $session
-     * @param bool             $startSession
-     */
     public function __construct(SessionInterface $session, bool $startSession = false)
     {
         $this->session = $session;
         $this->startSession = $startSession;
     }
 
-    /**
-     * @return string
-     */
     public function getSessionId() : string
     {
         try {

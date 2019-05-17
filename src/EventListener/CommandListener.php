@@ -12,17 +12,11 @@ class CommandListener
      */
     protected $commandLogger;
 
-    /**
-     * @param CommandLoggerInterface $commandLogger
-     */
     public function __construct(CommandLoggerInterface $commandLogger)
     {
         $this->commandLogger = $commandLogger;
     }
 
-    /**
-     * @param ConsoleCommandEvent $event
-     */
     public function onCommandResponse(ConsoleCommandEvent $event) : void
     {
         $this->commandLogger->logCommand($event->getCommand(), $event->getInput(), $event->getOutput());

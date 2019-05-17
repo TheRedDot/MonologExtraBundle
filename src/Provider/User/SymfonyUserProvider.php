@@ -5,7 +5,7 @@ namespace Hexanet\Common\MonologExtraBundle\Provider\User;
 use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
 
-class SymfonyUserProvider implements UserProviderInterface
+final class SymfonyUserProvider implements UserProviderInterface
 {
     /**
      * User for anonymous
@@ -22,17 +22,11 @@ class SymfonyUserProvider implements UserProviderInterface
      */
     private $tokenStorage;
 
-    /**
-     * @param TokenStorageInterface|null $tokenStorage
-     */
     public function __construct(TokenStorageInterface $tokenStorage = null)
     {
         $this->tokenStorage = $tokenStorage;
     }
 
-    /**
-     * @return string
-     */
     public function getUser() : string
     {
         $user = self::USER_ANONYMOUS;

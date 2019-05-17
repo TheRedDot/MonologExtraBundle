@@ -13,17 +13,11 @@ class ConsoleExceptionListener
      */
     protected $logger;
 
-    /**
-     * @param LoggerInterface $logger
-     */
     public function __construct(LoggerInterface $logger)
     {
         $this->logger = $logger;
     }
 
-    /**
-     * @param ConsoleErrorEvent $event
-     */
     public function onConsoleException(ConsoleErrorEvent $event) : void
     {
         $command = $event->getCommand();

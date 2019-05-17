@@ -12,19 +12,11 @@ class RequestLogger implements RequestLoggerInterface
      */
     protected $logger;
 
-    /**
-     * Construct
-     *
-     * @param LoggerInterface $logger Logger
-     */
     public function __construct(LoggerInterface $logger)
     {
         $this->logger = $logger;
     }
 
-    /**
-     * @param Request $request
-     */
     public function logRequest(Request $request) : void
     {
         $msg = sprintf(
@@ -36,11 +28,6 @@ class RequestLogger implements RequestLoggerInterface
         $this->logger->info($msg, $this->createContexts($request));
     }
 
-    /**
-     * @param Request $request
-     *
-     * @return array
-     */
     public function createContexts(Request $request) : array
     {
         $map = array(
