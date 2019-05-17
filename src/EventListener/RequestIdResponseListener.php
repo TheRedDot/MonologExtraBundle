@@ -21,5 +21,4 @@ class RequestIdResponseListener
     {
         $event->getResponse()->headers->set('X-Request-ID', $this->requestIdProvider->getRequestId());
     }
-
 }
