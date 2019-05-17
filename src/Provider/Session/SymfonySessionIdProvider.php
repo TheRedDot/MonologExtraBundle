@@ -24,9 +24,6 @@ final class SymfonySessionIdProvider implements SessionIdProviderInterface
         $this->startSession = $startSession;
     }
 
-    /**
-     * @return string
-     */
     public function getSessionId() : string
     {
         try {

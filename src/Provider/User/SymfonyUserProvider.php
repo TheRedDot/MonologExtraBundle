@@ -27,9 +27,6 @@ final class SymfonyUserProvider implements UserProviderInterface
         $this->tokenStorage = $tokenStorage;
     }
 
-    /**
-     * @return string
-     */
     public function getUser() : string
     {
         $user = self::USER_ANONYMOUS;
