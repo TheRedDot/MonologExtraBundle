@@ -12,8 +12,8 @@ hexanet_monolog_extra:
         # add the session id
         session_id: false
 
-        # add Unique Identification Number
-        uid: true
+        # add request id
+        request_id: true
 
         # add static data
         additions:
@@ -35,12 +35,12 @@ hexanet_monolog_extra:
         # log console exception
         on_console_exception: true
 
-        # add uid in the headers of responses
-        add_uid_to_response: true
+        # add request id in the headers of responses
+        add_request_id_to_response: true
 
-    # you can change the provider for uid, user and session_id
+    # you can change the provider for request id, user and session_id
     provider:
-        uid: Hexanet\Common\MonologExtraBundle\Provider\Uid\ApacheUniqueIdProvider
+        request_id: Hexanet\Common\MonologExtraBundle\Provider\RequestId\ApacheUniqueIdProvider
 
         user: Hexanet\Common\MonologExtraBundle\Provider\User\SymfonyUserProvider
 

@@ -1,37 +1,37 @@
 <?php
 
-namespace Hexanet\Common\MonologExtraBundle\Provider\Uid;
+namespace Hexanet\Common\MonologExtraBundle\Provider\RequestId;
 
-class ApacheUniqueIdProvider implements UidProviderInterface
+class ApacheUniqueIdProvider implements RequestIdProviderInterface
 {
     /**
      * @var string
      */
-    protected $uid;
+    protected $requestId;
 
     /**
      * @param array|null $serverData
      */
     public function __construct(array $serverData = null)
     {
-        $uid = uniqid();
+        $requestId = uniqid();
 
         if (!is_array($serverData)) {
             $serverData = &$_SERVER;
         }
 
         if (isset($serverData['UNIQUE_ID'])) {
-            $uid = $serverData['UNIQUE_ID'];
+            $requestId = $serverData['UNIQUE_ID'];
         }
 
-        $this->uid = $uid;
+        $this->requestId = $requestId;
     }
 
     /**
      * @return string
      */
-    public function getUid() : string
+    public function getRequestId() : string
     {
-        return $this->uid;
+        return $this->requestId;
     }
 }
