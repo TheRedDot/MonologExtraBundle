@@ -22,7 +22,7 @@ Open a command console, enter your project directory and execute the
 following command to download the latest stable version of this bundle:
 
 ```console
-$ composer require hexanet/monolog-extra-bundle
+$ composer require thereddot/monolog-extra-bundle
 ```
 
 This command requires you to have Composer installed globally, as explained
