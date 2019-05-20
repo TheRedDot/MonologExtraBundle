@@ -11,17 +11,16 @@ final class ServerRequestIdProvider implements RequestIdProviderInterface
 
     public function __construct(string $serverField, array $serverData = null)
     {
-        $requestId = uniqid();
-
         if (!is_array($serverData)) {
             $serverData = &$_SERVER;
         }
 
+        $requestId = null;
         if (isset($serverData[$serverField])) {
             $requestId = $serverData[$serverField];
         }
 
-        $this->requestId = $requestId;
+        $this->requestId = $requestId ?? uniqid();
     }
 
     public function getRequestId(): string
