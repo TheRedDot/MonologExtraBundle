@@ -119,7 +119,8 @@ the_red_dot_monolog_extra:
 The bundle comes with 2 providers:
 
 * UniqidProvider (default): use `uniqid`
-* ApacheUniqueIdProvider: get from environment, need [*mod_unique_id*](https://httpd.apache.org/docs/2.4/mod/mod_unique_id.html) of Apache
+* ServerRequestIdProvider: get from `$_SERVER`
+  * you need to pass the name of a field of `$_SERVER`, example for [*mod_unique_id*](https://httpd.apache.org/docs/2.4/mod/mod_unique_id.html) of Apache: `UNIQUE_ID`.
 
 You can create your own provider by creating a service that implements *TheRedDot\MonologExtraBundle\Provider\RequestId\RequestIdProviderInterface*.
 
