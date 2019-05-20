@@ -1,0 +1,16 @@
+<?php
+
+$finder = \PhpCsFixer\Finder::create()
+    ->in(__DIR__.DIRECTORY_SEPARATOR.'src')
+    ->in(__DIR__.DIRECTORY_SEPARATOR.'spec')
+    ->append(['.php_cs.dist']);
+
+$rules = [
+    '@Symfony' => true,
+    'array_syntax' => ['syntax' => 'short'],
+];
+
+return \PhpCsFixer\Config::create()
+    ->setUsingCache(true)
+    ->setRules($rules)
+    ->setFinder($finder);
