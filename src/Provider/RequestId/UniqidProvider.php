@@ -1,6 +1,6 @@
 <?php
 
-namespace Hexanet\Common\MonologExtraBundle\Provider\RequestId;
+namespace TheRedDot\MonologExtraBundle\Provider\RequestId;
 
 final class UniqidProvider implements RequestIdProviderInterface
 {

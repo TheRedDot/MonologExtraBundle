@@ -1,8 +1,8 @@
 <?php
 
-namespace Hexanet\Common\MonologExtraBundle\Processor;
+namespace TheRedDot\MonologExtraBundle\Processor;
 
-use Hexanet\Common\MonologExtraBundle\Provider\Session\SessionIdProviderInterface;
+use TheRedDot\MonologExtraBundle\Provider\Session\SessionIdProviderInterface;
 
 /**
  * Add session id to monolog messages

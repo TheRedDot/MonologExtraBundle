@@ -1,9 +1,9 @@
 <?php
 
-namespace Hexanet\Common\MonologExtraBundle\EventListener;
+namespace TheRedDot\MonologExtraBundle\EventListener;
 
-use Hexanet\Common\MonologExtraBundle\Logger\Request\RequestLoggerInterface;
-use Hexanet\Common\MonologExtraBundle\Logger\Response\ResponseLoggerInterface;
+use TheRedDot\MonologExtraBundle\Logger\Request\RequestLoggerInterface;
+use TheRedDot\MonologExtraBundle\Logger\Response\ResponseLoggerInterface;
 use Symfony\Component\HttpKernel\Event\GetResponseEvent;
 use Symfony\Component\HttpKernel\HttpKernel;
 use Symfony\Component\HttpKernel\Event\FilterResponseEvent;

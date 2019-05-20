@@ -1,10 +1,10 @@
 <?php
 
-namespace Hexanet\Common\MonologExtraBundle\DependencyInjection;
+namespace TheRedDot\MonologExtraBundle\DependencyInjection;
 
-use Hexanet\Common\MonologExtraBundle\Provider\Session\SymfonySessionIdProvider;
-use Hexanet\Common\MonologExtraBundle\Provider\RequestId\UniqidProvider;
-use Hexanet\Common\MonologExtraBundle\Provider\User\SymfonyUserProvider;
+use TheRedDot\MonologExtraBundle\Provider\Session\SymfonySessionIdProvider;
+use TheRedDot\MonologExtraBundle\Provider\RequestId\UniqidProvider;
+use TheRedDot\MonologExtraBundle\Provider\User\SymfonyUserProvider;
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
 
@@ -16,7 +16,7 @@ class Configuration implements ConfigurationInterface
     public function getConfigTreeBuilder()
     {
         $treeBuilder = new TreeBuilder();
-        $rootNode = $treeBuilder->root('hexanet_monolog_extra');
+        $rootNode = $treeBuilder->root('the_red_dot_monolog_extra');
 
         $rootNode
             ->children()

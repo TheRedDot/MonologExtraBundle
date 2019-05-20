@@ -1,9 +1,9 @@
 <?php
 
-namespace spec\Hexanet\Common\MonologExtraBundle\Logger\Command;
+namespace spec\TheRedDot\MonologExtraBundle\Logger\Command;
 
-use Hexanet\Common\MonologExtraBundle\Logger\Command\CommandLogger;
-use Hexanet\Common\MonologExtraBundle\Logger\Command\CommandLoggerInterface;
+use TheRedDot\MonologExtraBundle\Logger\Command\CommandLogger;
+use TheRedDot\MonologExtraBundle\Logger\Command\CommandLoggerInterface;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
 use Psr\Log\LoggerInterface;

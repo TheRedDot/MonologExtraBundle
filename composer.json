@@ -6,7 +6,7 @@
     "license": "MIT",
     "autoload": {
         "psr-4": {
-          "Hexanet\\Common\\MonologExtraBundle\\": "src"
+          "TheRedDot\\MonologExtraBundle\\": "src"
         }
     },
     "authors": [

@@ -1,9 +1,9 @@
 <?php
 
-namespace spec\Hexanet\Common\MonologExtraBundle\Processor;
+namespace spec\TheRedDot\MonologExtraBundle\Processor;
 
-use Hexanet\Common\MonologExtraBundle\Processor\UserProcessor;
-use Hexanet\Common\MonologExtraBundle\Provider\User\UserProviderInterface;
+use TheRedDot\MonologExtraBundle\Processor\UserProcessor;
+use TheRedDot\MonologExtraBundle\Provider\User\UserProviderInterface;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
 

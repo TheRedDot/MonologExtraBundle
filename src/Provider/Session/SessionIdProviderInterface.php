@@ -1,6 +1,6 @@
 <?php
 
-namespace Hexanet\Common\MonologExtraBundle\Provider\Session;
+namespace TheRedDot\MonologExtraBundle\Provider\Session;
 
 interface SessionIdProviderInterface
 {

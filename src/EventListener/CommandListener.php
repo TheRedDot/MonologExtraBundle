@@ -1,8 +1,8 @@
 <?php
 
-namespace Hexanet\Common\MonologExtraBundle\EventListener;
+namespace TheRedDot\MonologExtraBundle\EventListener;
 
-use Hexanet\Common\MonologExtraBundle\Logger\Command\CommandLoggerInterface;
+use TheRedDot\MonologExtraBundle\Logger\Command\CommandLoggerInterface;
 use Symfony\Component\Console\Event\ConsoleCommandEvent;
 
 class CommandListener

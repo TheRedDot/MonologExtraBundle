@@ -1,12 +1,12 @@
 <?php
 
-namespace spec\Hexanet\Common\MonologExtraBundle\EventListener;
+namespace spec\TheRedDot\MonologExtraBundle\EventListener;
 
-use Hexanet\Common\MonologExtraBundle\EventListener\RequestResponseListener;
+use TheRedDot\MonologExtraBundle\EventListener\RequestResponseListener;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
-use Hexanet\Common\MonologExtraBundle\Logger\Request\RequestLoggerInterface;
-use Hexanet\Common\MonologExtraBundle\Logger\Response\ResponseLoggerInterface;
+use TheRedDot\MonologExtraBundle\Logger\Request\RequestLoggerInterface;
+use TheRedDot\MonologExtraBundle\Logger\Response\ResponseLoggerInterface;
 
 class RequestResponseListenerSpec extends ObjectBehavior
 {

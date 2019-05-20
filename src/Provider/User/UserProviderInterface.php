@@ -1,6 +1,6 @@
 <?php
 
-namespace Hexanet\Common\MonologExtraBundle\Provider\User;
+namespace TheRedDot\MonologExtraBundle\Provider\User;
 
 interface UserProviderInterface
 {

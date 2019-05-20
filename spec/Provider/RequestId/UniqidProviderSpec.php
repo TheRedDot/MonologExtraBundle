@@ -1,9 +1,9 @@
 <?php
 
-namespace spec\Hexanet\Common\MonologExtraBundle\Provider\Uid;
+namespace spec\TheRedDot\MonologExtraBundle\Provider\Uid;
 
-use Hexanet\Common\MonologExtraBundle\Provider\RequestId\RequestIdProviderInterface;
-use Hexanet\Common\MonologExtraBundle\Provider\RequestId\UniqidProvider;
+use TheRedDot\MonologExtraBundle\Provider\RequestId\RequestIdProviderInterface;
+use TheRedDot\MonologExtraBundle\Provider\RequestId\UniqidProvider;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
 

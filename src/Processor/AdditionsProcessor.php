@@ -1,6 +1,6 @@
 <?php
 
-namespace Hexanet\Common\MonologExtraBundle\Processor;
+namespace TheRedDot\MonologExtraBundle\Processor;
 
 class AdditionsProcessor
 {

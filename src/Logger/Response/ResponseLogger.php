@@ -1,6 +1,6 @@
 <?php
 
-namespace Hexanet\Common\MonologExtraBundle\Logger\Response;
+namespace TheRedDot\MonologExtraBundle\Logger\Response;
 
 use Psr\Log\LoggerInterface;
 use Symfony\Component\HttpFoundation\Request;

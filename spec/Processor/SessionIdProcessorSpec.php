@@ -1,11 +1,11 @@
 <?php
 
-namespace spec\Hexanet\Common\MonologExtraBundle\Processor;
+namespace spec\TheRedDot\MonologExtraBundle\Processor;
 
-use Hexanet\Common\MonologExtraBundle\Processor\SessionIdProcessor;
+use TheRedDot\MonologExtraBundle\Processor\SessionIdProcessor;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
-use Hexanet\Common\MonologExtraBundle\Provider\Session\SessionIdProviderInterface;
+use TheRedDot\MonologExtraBundle\Provider\Session\SessionIdProviderInterface;
 
 class SessionIdProcessorSpec extends ObjectBehavior
 {

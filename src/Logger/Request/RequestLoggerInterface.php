@@ -1,6 +1,6 @@
 <?php
 
-namespace Hexanet\Common\MonologExtraBundle\Logger\Request;
+namespace TheRedDot\MonologExtraBundle\Logger\Request;
 
 use Symfony\Component\HttpFoundation\Request;
 
