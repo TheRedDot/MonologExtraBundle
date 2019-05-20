@@ -26,7 +26,7 @@ class RequestResponseListener
         $this->responseLogger = $responseLogger;
     }
 
-    public function onRequest(GetResponseEvent $event) : void
+    public function onRequest(GetResponseEvent $event): void
     {
         if (HttpKernel::MASTER_REQUEST !== $event->getRequestType()) {
             return;
@@ -35,9 +35,8 @@ class RequestResponseListener
         $this->requestLogger->logRequest($event->getRequest());
     }
 
-    public function onResponse(FilterResponseEvent $event) : void
+    public function onResponse(FilterResponseEvent $event): void
     {
         $this->responseLogger->logResponse($event->getResponse(), $event->getRequest());
     }
-
 }

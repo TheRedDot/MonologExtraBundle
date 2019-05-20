@@ -14,7 +14,7 @@ final class UniqidProvider implements RequestIdProviderInterface
         $this->requestId = uniqid();
     }
 
-    public function getRequestId() : string
+    public function getRequestId(): string
     {
         return $this->requestId;
     }

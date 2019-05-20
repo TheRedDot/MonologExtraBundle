@@ -4,34 +4,33 @@ namespace spec\TheRedDot\MonologExtraBundle\Processor;
 
 use TheRedDot\MonologExtraBundle\Processor\AdditionsProcessor;
 use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
 
 class AdditionsProcessorSpec extends ObjectBehavior
 {
-    function let()
+    public function let()
     {
         $this->beConstructedWith([]);
     }
 
-    function it_is_initializable()
+    public function it_is_initializable()
     {
         $this->shouldHaveType(AdditionsProcessor::class);
     }
 
-    function it_adds_nothing_to_record_by_default()
+    public function it_adds_nothing_to_record_by_default()
     {
         $this->processRecord([])->shouldReturn([]);
     }
 
-    function it_adds_entries_to_record()
+    public function it_adds_entries_to_record()
     {
         $this->beConstructedWith(['type' => 'symfony']);
 
         $this->processRecord(['message' => 'log'])->shouldReturn([
             'message' => 'log',
             'extra' => [
-                'type' => 'symfony'
-            ]
+                'type' => 'symfony',
+            ],
         ]);
     }
 }

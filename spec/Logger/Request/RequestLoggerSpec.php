@@ -12,28 +12,28 @@ use Symfony\Component\HttpFoundation\ParameterBag;
 
 class RequestLoggerSpec extends ObjectBehavior
 {
-    function let(LoggerInterface $logger)
+    public function let(LoggerInterface $logger)
     {
         $this->beConstructedWith($logger);
     }
 
-    function it_is_initializable()
+    public function it_is_initializable()
     {
         $this->shouldHaveType(RequestLogger::class);
     }
 
-    function it_implements_request_logger_interface()
+    public function it_implements_request_logger_interface()
     {
         $this->shouldImplement(RequestLoggerInterface::class);
     }
 
-    function it_logs_request(LoggerInterface $logger, Request $request, ParameterBag $parameterBag)
+    public function it_logs_request(LoggerInterface $logger, Request $request, ParameterBag $parameterBag)
     {
         $logger
             ->info(Argument::type('string'), Argument::type('array'))
             ->shouldBeCalled();
 
-	$request->attributes = $parameterBag;
+        $request->attributes = $parameterBag;
 
         $this->logRequest($request);
     }

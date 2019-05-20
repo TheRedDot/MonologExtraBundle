@@ -3,7 +3,6 @@
 namespace TheRedDot\MonologExtraBundle\EventListener;
 
 use Symfony\Component\Console\Event\ConsoleErrorEvent;
-use Symfony\Component\Console\Event\ConsoleExceptionEvent;
 use Psr\Log\LoggerInterface;
 
 class ConsoleExceptionListener
@@ -18,7 +17,7 @@ class ConsoleExceptionListener
         $this->logger = $logger;
     }
 
-    public function onConsoleException(ConsoleErrorEvent $event) : void
+    public function onConsoleException(ConsoleErrorEvent $event): void
     {
         $command = $event->getCommand();
         if (!$command) {
@@ -37,7 +36,7 @@ class ConsoleExceptionListener
         );
 
         $this->logger->error($message, [
-            'exception' => $exception
+            'exception' => $exception,
         ]);
     }
 }

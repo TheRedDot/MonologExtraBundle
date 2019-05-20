@@ -14,7 +14,7 @@ class AdditionsProcessor
         $this->entries = $entries;
     }
 
-    public function processRecord(array $record) : array
+    public function processRecord(array $record): array
     {
         foreach ($this->entries as $key => $value) {
             $record['extra'][$key] = $value;

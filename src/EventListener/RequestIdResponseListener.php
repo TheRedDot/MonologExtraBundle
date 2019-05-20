@@ -17,7 +17,7 @@ class RequestIdResponseListener
         $this->requestIdProvider = $requestIdProvider;
     }
 
-    public function onKernelResponse(FilterResponseEvent $event) : void
+    public function onKernelResponse(FilterResponseEvent $event): void
     {
         $event->getResponse()->headers->set('X-Request-ID', $this->requestIdProvider->getRequestId());
     }

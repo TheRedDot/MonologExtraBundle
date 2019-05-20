@@ -4,28 +4,27 @@ namespace spec\TheRedDot\MonologExtraBundle\Provider\Session;
 
 use TheRedDot\MonologExtraBundle\Provider\Session\SessionIdProviderInterface;
 use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use TheRedDot\MonologExtraBundle\Provider\Session\SymfonySessionIdProvider;
 
 class SymfonySessionIdProviderSpec extends ObjectBehavior
 {
-    function let(SessionInterface $session)
+    public function let(SessionInterface $session)
     {
         $this->beConstructedWith($session, true);
     }
 
-    function it_is_initializable()
+    public function it_is_initializable()
     {
         $this->shouldHaveType(SymfonySessionIdProvider::class);
     }
 
-    function it_implements_session_id_provider_interface()
+    public function it_implements_session_id_provider_interface()
     {
         $this->shouldImplement(SessionIdProviderInterface::class);
     }
 
-    function it_starts_session(SessionInterface $session)
+    public function it_starts_session(SessionInterface $session)
     {
         $session->isStarted()->willReturn(false);
 
@@ -36,7 +35,7 @@ class SymfonySessionIdProviderSpec extends ObjectBehavior
         $this->getSessionId()->shouldBeString();
     }
 
-    function it_returns_session_id(SessionInterface $session)
+    public function it_returns_session_id(SessionInterface $session)
     {
         $session->isStarted()->willReturn(true);
 
@@ -48,7 +47,7 @@ class SymfonySessionIdProviderSpec extends ObjectBehavior
         $this->getSessionId()->shouldBeString();
     }
 
-    function it_returns_specific_id_if_exception(SessionInterface $session)
+    public function it_returns_specific_id_if_exception(SessionInterface $session)
     {
         $session
             ->start()

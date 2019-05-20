@@ -8,14 +8,14 @@ use Symfony\Component\Security\Core\User\UserInterface;
 final class SymfonyUserProvider implements UserProviderInterface
 {
     /**
-     * User for anonymous
+     * User for anonymous.
      */
     const USER_ANONYMOUS = 'anonymous';
 
     /**
-     * Value for user when we are in cli
+     * Value for user when we are in cli.
      */
-    CONST USER_CLI = 'cli';
+    const USER_CLI = 'cli';
 
     /**
      * @var TokenStorageInterface|null
@@ -27,7 +27,7 @@ final class SymfonyUserProvider implements UserProviderInterface
         $this->tokenStorage = $tokenStorage;
     }
 
-    public function getUser() : string
+    public function getUser(): string
     {
         $user = self::USER_ANONYMOUS;
 
@@ -38,7 +38,7 @@ final class SymfonyUserProvider implements UserProviderInterface
             }
         }
 
-        if (php_sapi_name() === 'cli') {
+        if ('cli' === php_sapi_name()) {
             $user = self::USER_CLI;
         }
 

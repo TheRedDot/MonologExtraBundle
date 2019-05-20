@@ -23,7 +23,7 @@ use Symfony\Component\HttpKernel\KernelEvents;
 class TheRedDotMonologExtraExtension extends Extension
 {
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function load(array $configs, ContainerBuilder $container)
     {
@@ -56,7 +56,8 @@ class TheRedDotMonologExtraExtension extends Extension
             ->addArgument($config['processor']['additions']);
     }
 
-    protected function addProcessors(ContainerBuilder $container, array $config) {
+    protected function addProcessors(ContainerBuilder $container, array $config)
+    {
         if ($config['processor']['user']) {
             $definition = $container->getDefinition(UserProcessor::class);
             $definition->addTag('monolog.processor', ['method' => 'processRecord']);

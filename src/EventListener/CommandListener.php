@@ -17,9 +17,8 @@ class CommandListener
         $this->commandLogger = $commandLogger;
     }
 
-    public function onCommandResponse(ConsoleCommandEvent $event) : void
+    public function onCommandResponse(ConsoleCommandEvent $event): void
     {
         $this->commandLogger->logCommand($event->getCommand(), $event->getInput(), $event->getOutput());
     }
-
 }

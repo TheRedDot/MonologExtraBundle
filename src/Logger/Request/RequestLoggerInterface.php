@@ -6,6 +6,5 @@ use Symfony\Component\HttpFoundation\Request;
 
 interface RequestLoggerInterface
 {
-    public function logRequest(Request $request) : void;
-
+    public function logRequest(Request $request): void;
 }
