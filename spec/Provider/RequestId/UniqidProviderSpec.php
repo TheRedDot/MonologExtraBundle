@@ -1,6 +1,6 @@
 <?php
 
-namespace spec\TheRedDot\MonologExtraBundle\Provider\Uid;
+namespace spec\TheRedDot\MonologExtraBundle\Provider\RequestId;
 
 use TheRedDot\MonologExtraBundle\Provider\RequestId\RequestIdProviderInterface;
 use TheRedDot\MonologExtraBundle\Provider\RequestId\UniqidProvider;
