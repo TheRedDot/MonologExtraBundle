@@ -2,35 +2,38 @@ language: php
 
 sudo: false
 
-matrix:
-  include:
-    - php: 7.1
-      env: SYMFONY_VERSION=^3.0
-    - php: 7.1
-      env: SYMFONY_VERSION=^4.0
-    - php: 7.2
-      env: SYMFONY_VERSION=^3.0
-    - php: 7.2
-      env: SYMFONY_VERSION=^4.0
-    - php: 7.3
-      env: SYMFONY_VERSION=^3.0
-    - php: 7.3
-      env: SYMFONY_VERSION=^4.0
+stages:
+    - Code style analysis
+    - test
+
+php:
+    - 7.1
+    - 7.2
+    - 7.3
 
 env:
-  global:
-    - SYMFONY_VERSION=""
+    matrix:
+        - SYMFONY_VERSION=^3.0
+        - SYMFONY_VERSION=^4.0
 
 cache:
-  directories:
-    - $HOME/.composer/cache
+    directories:
+        - $HOME/.composer/cache
 
 before_install:
-  - composer self-update
-  - if [ "$DEPENDENCIES" = "beta" ]; then composer config minimum-stability beta; fi;
-  - if [ "$SYMFONY_VERSION" != "" ]; then composer require --no-update symfony/security:$SYMFONY_VERSION symfony/config:$SYMFONY_VERSION symfony/http-foundation:$SYMFONY_VERSION symfony/dependency-injection:$SYMFONY_VERSION symfony/http-kernel:$SYMFONY_VERSION; fi
+    - composer self-update
+    - if [ "$DEPENDENCIES" = "beta" ]; then composer config minimum-stability beta; fi;
+    - if [ "$SYMFONY_VERSION" != "" ]; then composer require --no-update symfony/security:$SYMFONY_VERSION symfony/config:$SYMFONY_VERSION symfony/http-foundation:$SYMFONY_VERSION symfony/dependency-injection:$SYMFONY_VERSION symfony/http-kernel:$SYMFONY_VERSION; fi
 
 install: composer update --prefer-dist --no-interaction $COMPOSER_FLAGS
 
 script:
-  - bin/phpspec run -fpretty --verbose
+    - bin/phpspec run -fpretty --verbose
+
+jobs:
+    include:
+        - stage: "Code style analysis"
+          php: 7.3
+          env: SYMFONY_VERSION=""
+          script:
+              - ./bin/php-cs-fixer fix --dry-run -v --show-progress=dots --diff-format=udiff

@@ -4,5 +4,5 @@ namespace TheRedDot\MonologExtraBundle\Provider\User;
 
 interface UserProviderInterface
 {
-    public function getUser() : string;
+    public function getUser(): string;
 }

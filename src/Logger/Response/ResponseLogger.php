@@ -18,7 +18,7 @@ class ResponseLogger implements ResponseLoggerInterface
         $this->logger = $logger;
     }
 
-    public function logResponse(Response $response, Request $request) : void
+    public function logResponse(Response $response, Request $request): void
     {
         $msg = sprintf(
             'Response %s for "%s %s"',
@@ -30,7 +30,7 @@ class ResponseLogger implements ResponseLoggerInterface
         $this->logger->info($msg, $this->createContext($response, $request));
     }
 
-    public function getMemory() : int
+    public function getMemory(): int
     {
         $memory = memory_get_peak_usage(true);
         $memory = $memory > 1024 ? (int) ($memory / 1024) : 0;
@@ -38,7 +38,7 @@ class ResponseLogger implements ResponseLoggerInterface
         return $memory;
     }
 
-    public function getTime(Request $request) : ?float
+    public function getTime(Request $request): ?float
     {
         if (!$request->server) {
             return null;
@@ -54,9 +54,9 @@ class ResponseLogger implements ResponseLoggerInterface
         return (float) $time;
     }
 
-    protected function createContext(Response $response, Request $request) : array
+    protected function createContext(Response $response, Request $request): array
     {
-        $context =  array(
+        $context = [
             'response_status_code' => $response->getStatusCode(),
             'response_charset' => $response->getCharset(),
             'response_date' => $response->getDate(),
@@ -71,10 +71,9 @@ class ResponseLogger implements ResponseLoggerInterface
             'request_uri' => $request->getRequestUri(),
             'request_route' => $request->attributes->get('_route'),
             'response_time' => $this->getTime($request),
-            'response_memory' => $this->getMemory()
-        );
+            'response_memory' => $this->getMemory(),
+        ];
 
         return $context;
     }
-
 }

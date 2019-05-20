@@ -11,7 +11,7 @@ use Symfony\Component\Config\Definition\ConfigurationInterface;
 class Configuration implements ConfigurationInterface
 {
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getConfigTreeBuilder()
     {
@@ -29,11 +29,11 @@ class Configuration implements ConfigurationInterface
                     ->children()
                         ->scalarNode('user')->defaultFalse()->end()
                         ->scalarNode('session_id')
-                            ->info("Adds session id into records")
+                            ->info('Adds session id into records')
                             ->defaultFalse()
                         ->end()
                         ->scalarNode('request_id')
-                            ->info("Adds request ID into records")
+                            ->info('Adds request ID into records')
                             ->defaultFalse()
                         ->end()
                         ->arrayNode('additions')
@@ -52,15 +52,15 @@ class Configuration implements ConfigurationInterface
                     ->addDefaultsIfNotSet()
                     ->children()
                         ->scalarNode('session_id')
-                            ->info("Provider for session id")
+                            ->info('Provider for session id')
                             ->defaultValue(SymfonySessionIdProvider::class)
                         ->end()
                         ->scalarNode('request_id')
-                            ->info("Provider for uid")
+                            ->info('Provider for uid')
                             ->defaultValue(UniqidProvider::class)
                         ->end()
                         ->scalarNode('user')
-                            ->info("Provider for user")
+                            ->info('Provider for user')
                             ->defaultValue(SymfonyUserProvider::class)
                         ->end()
                     ->end()

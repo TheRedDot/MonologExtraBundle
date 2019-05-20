@@ -5,7 +5,7 @@ namespace TheRedDot\MonologExtraBundle\Processor;
 use TheRedDot\MonologExtraBundle\Provider\User\UserProviderInterface;
 
 /**
- * Add user informations to monolog record
+ * Add user informations to monolog record.
  */
 class UserProcessor
 {
@@ -19,7 +19,7 @@ class UserProcessor
         $this->userProvider = $userProvider;
     }
 
-    public function processRecord(array $record) : array
+    public function processRecord(array $record): array
     {
         $record['extra']['user'] = $this->userProvider->getUser();
 

@@ -17,7 +17,7 @@ class RequestLogger implements RequestLoggerInterface
         $this->logger = $logger;
     }
 
-    public function logRequest(Request $request) : void
+    public function logRequest(Request $request): void
     {
         $msg = sprintf(
             'Request "%s %s"',
@@ -28,9 +28,9 @@ class RequestLogger implements RequestLoggerInterface
         $this->logger->info($msg, $this->createContexts($request));
     }
 
-    public function createContexts(Request $request) : array
+    public function createContexts(Request $request): array
     {
-        $map = array(
+        $map = [
             'request_method' => $request->getMethod(),
             'request_uri' => $request->getRequestUri(),
             'request_route' => $request->attributes->get('_route'),
@@ -48,9 +48,8 @@ class RequestLogger implements RequestLoggerInterface
             'request_auth_has_password' => !is_null($request->getPassword()),
             'request_encodings' => $request->getEncodings(),
             'request_client_ips' => $request->getClientIps(),
-        );
+        ];
 
         return $map;
     }
-
 }

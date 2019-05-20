@@ -24,7 +24,7 @@ final class ApacheUniqueIdProvider implements RequestIdProviderInterface
         $this->requestId = $requestId;
     }
 
-    public function getRequestId() : string
+    public function getRequestId(): string
     {
         return $this->requestId;
     }

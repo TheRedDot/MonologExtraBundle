@@ -19,7 +19,7 @@ class CommandLogger implements CommandLoggerInterface
         $this->logger = $logger;
     }
 
-    public function logCommand(Command $command, InputInterface $input, OutputInterface $output) : void
+    public function logCommand(Command $command, InputInterface $input, OutputInterface $output): void
     {
         $msg = sprintf(
             'Command "%s"',
@@ -29,18 +29,17 @@ class CommandLogger implements CommandLoggerInterface
         $this->logger->info($msg, $this->createContexts($command, $input, $output));
     }
 
-    public function createContexts(Command $command, InputInterface $input, OutputInterface $output) : array
+    public function createContexts(Command $command, InputInterface $input, OutputInterface $output): array
     {
-        $map = array(
+        $map = [
             'command_name' => $command->getName(),
             'command_enabled' => $command->isEnabled(),
             'command_hidden' => $command->isHidden(),
             'command_debug' => $output->isDebug(),
             'command_options' => $input->getOptions(),
             'command_arguments' => $input->getArguments(),
-        );
+        ];
 
         return $map;
     }
-
 }

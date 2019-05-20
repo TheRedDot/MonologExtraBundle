@@ -5,7 +5,7 @@ namespace TheRedDot\MonologExtraBundle\Processor;
 use TheRedDot\MonologExtraBundle\Provider\Session\SessionIdProviderInterface;
 
 /**
- * Add session id to monolog messages
+ * Add session id to monolog messages.
  */
 class SessionIdProcessor
 {
@@ -19,7 +19,7 @@ class SessionIdProcessor
         $this->sessionIdProvider = $sessionIdProvider;
     }
 
-    public function processRecord(array $record) : array
+    public function processRecord(array $record): array
     {
         $record['extra']['session_id'] = $this->sessionIdProvider->getSessionId();
 

@@ -7,6 +7,5 @@ use Symfony\Component\HttpFoundation\Response;
 
 interface ResponseLoggerInterface
 {
-    public function logResponse(Response $response, Request $request) : void;
-
+    public function logResponse(Response $response, Request $request): void;
 }

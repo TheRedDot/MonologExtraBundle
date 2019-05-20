@@ -16,7 +16,7 @@ class RequestIdProcessor
         $this->requestIdProvider = $requestIdProvider;
     }
 
-    public function processRecord(array $record) : array
+    public function processRecord(array $record): array
     {
         $record['extra']['request_id'] = $this->requestIdProvider->getRequestId();
 

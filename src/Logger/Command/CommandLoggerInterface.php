@@ -8,5 +8,5 @@ use Symfony\Component\Console\Output\OutputInterface;
 
 interface CommandLoggerInterface
 {
-    public function logCommand(Command $command, InputInterface $input, OutputInterface $output) : void;
+    public function logCommand(Command $command, InputInterface $input, OutputInterface $output): void;
 }

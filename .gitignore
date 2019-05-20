@@ -2,3 +2,4 @@ vendor
 composer.lock
 build
 bin
+.php_cs.cache
