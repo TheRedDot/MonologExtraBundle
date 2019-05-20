@@ -1,6 +1,6 @@
 <?php
 
-namespace Hexanet\Common\MonologExtraBundle\EventListener;
+namespace TheRedDot\MonologExtraBundle\EventListener;
 
 use Symfony\Component\Console\Event\ConsoleErrorEvent;
 use Symfony\Component\Console\Event\ConsoleExceptionEvent;

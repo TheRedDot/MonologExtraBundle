@@ -1,11 +1,11 @@
 <?php
 
-namespace spec\Hexanet\Common\MonologExtraBundle\EventListener;
+namespace spec\TheRedDot\MonologExtraBundle\EventListener;
 
-use Hexanet\Common\MonologExtraBundle\EventListener\CommandListener;
+use TheRedDot\MonologExtraBundle\EventListener\CommandListener;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
-use Hexanet\Common\MonologExtraBundle\Logger\Command\CommandLoggerInterface;
+use TheRedDot\MonologExtraBundle\Logger\Command\CommandLoggerInterface;
 
 class CommandListenerSpec extends ObjectBehavior
 {

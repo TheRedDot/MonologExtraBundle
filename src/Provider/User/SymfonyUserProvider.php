@@ -1,6 +1,6 @@
 <?php
 
-namespace Hexanet\Common\MonologExtraBundle\Provider\User;
+namespace TheRedDot\MonologExtraBundle\Provider\User;
 
 use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInterface;
 use Symfony\Component\Security\Core\User\UserInterface;

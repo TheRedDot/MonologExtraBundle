@@ -1,6 +1,6 @@
 <?php
 
-namespace Hexanet\Common\MonologExtraBundle\Logger\Command;
+namespace TheRedDot\MonologExtraBundle\Logger\Command;
 
 use Psr\Log\LoggerInterface;
 use Symfony\Component\Console\Command\Command;

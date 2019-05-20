@@ -1,8 +1,8 @@
 <?php
 
-namespace spec\Hexanet\Common\MonologExtraBundle\Processor;
+namespace spec\TheRedDot\MonologExtraBundle\Processor;
 
-use Hexanet\Common\MonologExtraBundle\Processor\AdditionsProcessor;
+use TheRedDot\MonologExtraBundle\Processor\AdditionsProcessor;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
 

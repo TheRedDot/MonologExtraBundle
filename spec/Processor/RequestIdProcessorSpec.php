@@ -1,11 +1,11 @@
 <?php
 
-namespace spec\Hexanet\Common\MonologExtraBundle\Processor;
+namespace spec\TheRedDot\MonologExtraBundle\Processor;
 
-use Hexanet\Common\MonologExtraBundle\Processor\RequestIdProcessor;
+use TheRedDot\MonologExtraBundle\Processor\RequestIdProcessor;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
-use Hexanet\Common\MonologExtraBundle\Provider\RequestId\RequestIdProviderInterface;
+use TheRedDot\MonologExtraBundle\Provider\RequestId\RequestIdProviderInterface;
 
 class RequestIdProcessorSpec extends ObjectBehavior
 {

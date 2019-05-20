@@ -1,4 +1,4 @@
 suites:
   default:
-    namespace: Hexanet\Common\MonologExtraBundle
-    psr4_prefix: Hexanet\Common\MonologExtraBundle
+    namespace: TheRedDot\MonologExtraBundle
+    psr4_prefix: TheRedDot\MonologExtraBundle

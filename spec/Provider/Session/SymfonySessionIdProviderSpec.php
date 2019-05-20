@@ -1,12 +1,12 @@
 <?php
 
-namespace spec\Hexanet\Common\MonologExtraBundle\Provider\Session;
+namespace spec\TheRedDot\MonologExtraBundle\Provider\Session;
 
-use Hexanet\Common\MonologExtraBundle\Provider\Session\SessionIdProviderInterface;
+use TheRedDot\MonologExtraBundle\Provider\Session\SessionIdProviderInterface;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
-use Hexanet\Common\MonologExtraBundle\Provider\Session\SymfonySessionIdProvider;
+use TheRedDot\MonologExtraBundle\Provider\Session\SymfonySessionIdProvider;
 
 class SymfonySessionIdProviderSpec extends ObjectBehavior
 {

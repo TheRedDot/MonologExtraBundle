@@ -1,8 +1,8 @@
 <?php
 
-namespace Hexanet\Common\MonologExtraBundle\EventListener;
+namespace TheRedDot\MonologExtraBundle\EventListener;
 
-use Hexanet\Common\MonologExtraBundle\Provider\RequestId\RequestIdProviderInterface;
+use TheRedDot\MonologExtraBundle\Provider\RequestId\RequestIdProviderInterface;
 use Symfony\Component\HttpKernel\Event\FilterResponseEvent;
 
 class RequestIdResponseListener

@@ -1,8 +1,8 @@
 <?php
 
-namespace Hexanet\Common\MonologExtraBundle\Processor;
+namespace TheRedDot\MonologExtraBundle\Processor;
 
-use Hexanet\Common\MonologExtraBundle\Provider\User\UserProviderInterface;
+use TheRedDot\MonologExtraBundle\Provider\User\UserProviderInterface;
 
 /**
  * Add user informations to monolog record

@@ -45,7 +45,7 @@ class AppKernel extends Kernel
     {
         $bundles = array(
             // ...
-            new Hexanet\Common\MonologExtraBundle\HexanetMonologExtraBundle(),
+            new TheRedDot\MonologExtraBundle\HexanetMonologExtraBundle(),
         );
         // ...
     }
@@ -70,7 +70,7 @@ The bundle provides several processors:
 The *UserProcessor* add data about the current user in each log entry.
 
 ```yaml
-hexanet_monolog_extra:
+the_red_dot_monolog_extra:
     processor:
         user: true
 ```
@@ -80,10 +80,10 @@ The default provider returns:
 * the username of the current logged user
 * cli
 
-You can create your own provider by creating a service that implements *Hexanet\Common\MonologExtraBundle\Provider\User\UserProviderInterface*.
+You can create your own provider by creating a service that implements *TheRedDot\MonologExtraBundle\Provider\User\UserProviderInterface*.
 
 ```yaml
-hexanet_monolog_extra:
+the_red_dot_monolog_extra:
     provider:
         user: your_own_provider_service_id
 ```
@@ -93,15 +93,15 @@ hexanet_monolog_extra:
 Add the session id in each log entry.
 
 ```yaml
-hexanet_monolog_extra:
+the_red_dot_monolog_extra:
     processor:
         session_id: true
 ```
 
-You can create your own provider by creating a service that implements *Hexanet\Common\MonologExtraBundle\Provider\Session\SessionIdProviderInterface*.
+You can create your own provider by creating a service that implements *TheRedDot\MonologExtraBundle\Provider\Session\SessionIdProviderInterface*.
 
 ```yaml
-hexanet_monolog_extra:
+the_red_dot_monolog_extra:
     provider:
         session_id: your_own_provider_service_id
 ```
@@ -111,7 +111,7 @@ hexanet_monolog_extra:
 Add the request id for the request in each log entry.
 
 ```yaml
-hexanet_monolog_extra:
+the_red_dot_monolog_extra:
     processor:
         request_id: true
 ```
@@ -121,10 +121,10 @@ The bundle comes with 2 providers:
 * UniqidProvider (default): use `uniqid`
 * ApacheUniqueIdProvider: get from environment, need [*mod_unique_id*](https://httpd.apache.org/docs/2.4/mod/mod_unique_id.html) of Apache
 
-You can create your own provider by creating a service that implements *Hexanet\Common\MonologExtraBundle\Provider\RequestId\RequestIdProviderInterface*.
+You can create your own provider by creating a service that implements *TheRedDot\MonologExtraBundle\Provider\RequestId\RequestIdProviderInterface*.
 
 ```yaml
-hexanet_monolog_extra:
+the_red_dot_monolog_extra:
     provider:
         request_id: your_own_provider_service_id
 ```
@@ -134,7 +134,7 @@ hexanet_monolog_extra:
 Add custom data in each log entry.
 
 ```yaml
-hexanet_monolog_extra:
+the_red_dot_monolog_extra:
     processor:
         additions:
             type: symfony

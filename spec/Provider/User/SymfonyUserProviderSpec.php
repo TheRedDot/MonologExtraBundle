@@ -1,9 +1,9 @@
 <?php
 
-namespace spec\Hexanet\Common\MonologExtraBundle\Provider\User;
+namespace spec\TheRedDot\MonologExtraBundle\Provider\User;
 
-use Hexanet\Common\MonologExtraBundle\Provider\User\SymfonyUserProvider;
-use Hexanet\Common\MonologExtraBundle\Provider\User\UserProviderInterface;
+use TheRedDot\MonologExtraBundle\Provider\User\SymfonyUserProvider;
+use TheRedDot\MonologExtraBundle\Provider\User\UserProviderInterface;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
 use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInterface;

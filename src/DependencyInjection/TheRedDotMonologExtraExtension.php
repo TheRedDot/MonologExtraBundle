@@ -1,19 +1,18 @@
 <?php
 
-namespace Hexanet\Common\MonologExtraBundle\DependencyInjection;
+namespace TheRedDot\MonologExtraBundle\DependencyInjection;
 
-use Hexanet\Common\MonologExtraBundle\EventListener\CommandListener;
-use Hexanet\Common\MonologExtraBundle\EventListener\ConsoleExceptionListener;
-use Hexanet\Common\MonologExtraBundle\EventListener\RequestResponseListener;
-use Hexanet\Common\MonologExtraBundle\EventListener\RequestIdResponseListener;
-use Hexanet\Common\MonologExtraBundle\Processor\AdditionsProcessor;
-use Hexanet\Common\MonologExtraBundle\Processor\SessionIdProcessor;
-use Hexanet\Common\MonologExtraBundle\Processor\RequestIdProcessor;
-use Hexanet\Common\MonologExtraBundle\Processor\UserProcessor;
-use Hexanet\Common\MonologExtraBundle\Provider\RequestId\RequestIdProviderInterface;
-use Hexanet\Common\MonologExtraBundle\Provider\Session\SessionIdProviderInterface;
-use Hexanet\Common\MonologExtraBundle\Provider\RequestId\UidProviderInterface;
-use Hexanet\Common\MonologExtraBundle\Provider\User\UserProviderInterface;
+use TheRedDot\MonologExtraBundle\EventListener\CommandListener;
+use TheRedDot\MonologExtraBundle\EventListener\ConsoleExceptionListener;
+use TheRedDot\MonologExtraBundle\EventListener\RequestResponseListener;
+use TheRedDot\MonologExtraBundle\EventListener\RequestIdResponseListener;
+use TheRedDot\MonologExtraBundle\Processor\AdditionsProcessor;
+use TheRedDot\MonologExtraBundle\Processor\SessionIdProcessor;
+use TheRedDot\MonologExtraBundle\Processor\RequestIdProcessor;
+use TheRedDot\MonologExtraBundle\Processor\UserProcessor;
+use TheRedDot\MonologExtraBundle\Provider\RequestId\RequestIdProviderInterface;
+use TheRedDot\MonologExtraBundle\Provider\Session\SessionIdProviderInterface;
+use TheRedDot\MonologExtraBundle\Provider\User\UserProviderInterface;
 use Symfony\Component\Console\ConsoleEvents;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\Config\FileLocator;
@@ -21,7 +20,7 @@ use Symfony\Component\HttpKernel\DependencyInjection\Extension;
 use Symfony\Component\DependencyInjection\Loader;
 use Symfony\Component\HttpKernel\KernelEvents;
 
-class HexanetMonologExtraExtension extends Extension
+class TheRedDotMonologExtraExtension extends Extension
 {
     /**
      * {@inheritDoc}
@@ -34,7 +33,7 @@ class HexanetMonologExtraExtension extends Extension
         $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('services.yml');
 
-        $container->setParameter('hexanet_monolog_extra.session_start', $config['session_start']);
+        $container->setParameter('the_red_dot_monolog_extra.session_start', $config['session_start']);
 
         $container->setAlias(RequestIdProviderInterface::class, $config['provider']['request_id']);
         $container->setAlias(SessionIdProviderInterface::class, $config['provider']['session_id']);

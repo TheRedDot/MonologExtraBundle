@@ -1,8 +1,8 @@
 <?php
 
-namespace Hexanet\Common\MonologExtraBundle\Processor;
+namespace TheRedDot\MonologExtraBundle\Processor;
 
-use Hexanet\Common\MonologExtraBundle\Provider\RequestId\RequestIdProviderInterface;
+use TheRedDot\MonologExtraBundle\Provider\RequestId\RequestIdProviderInterface;
 
 class RequestIdProcessor
 {

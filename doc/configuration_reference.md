@@ -1,7 +1,7 @@
 # Configuration reference
 
 ```yaml
-hexanet_monolog_extra:
+the_red_dot_monolog_extra:
 
     # add data to extra in each records of log
     processor:
@@ -40,9 +40,9 @@ hexanet_monolog_extra:
 
     # you can change the provider for request id, user and session_id
     provider:
-        request_id: Hexanet\Common\MonologExtraBundle\Provider\RequestId\ApacheUniqueIdProvider
+        request_id: TheRedDot\MonologExtraBundle\Provider\RequestId\ApacheUniqueIdProvider
 
-        user: Hexanet\Common\MonologExtraBundle\Provider\User\SymfonyUserProvider
+        user: TheRedDot\MonologExtraBundle\Provider\User\SymfonyUserProvider
 
-        session_id: Hexanet\Common\MonologExtraBundle\Provider\Session\SymfonySessionIdProvider
+        session_id: TheRedDot\MonologExtraBundle\Provider\Session\SymfonySessionIdProvider
 ```
