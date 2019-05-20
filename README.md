@@ -45,7 +45,7 @@ class AppKernel extends Kernel
     {
         $bundles = array(
             // ...
-            new TheRedDot\MonologExtraBundle\HexanetMonologExtraBundle(),
+            new TheRedDot\MonologExtraBundle\TheRedDotMonologExtraBundle(),
         );
         // ...
     }
