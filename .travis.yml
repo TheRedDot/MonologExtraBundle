@@ -23,7 +23,6 @@ cache:
 
 before_install:
     - composer self-update
-    - if [ "$DEPENDENCIES" = "beta" ]; then composer config minimum-stability beta; fi;
     - if [ "$SYMFONY_VERSION" != "" ]; then composer require --no-update symfony/security:$SYMFONY_VERSION symfony/config:$SYMFONY_VERSION symfony/http-foundation:$SYMFONY_VERSION symfony/dependency-injection:$SYMFONY_VERSION symfony/http-kernel:$SYMFONY_VERSION; fi
 
 install: composer update --prefer-dist --no-interaction $COMPOSER_FLAGS
