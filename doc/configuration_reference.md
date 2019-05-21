@@ -40,7 +40,7 @@ the_red_dot_monolog_extra:
 
     # you can change the provider for request id, user and session_id
     provider:
-        request_id: TheRedDot\MonologExtraBundle\Provider\RequestId\ApacheUniqueIdProvider
+        request_id: TheRedDot\MonologExtraBundle\Provider\RequestId\ServerRequestIdProvider
 
         user: TheRedDot\MonologExtraBundle\Provider\User\SymfonyUserProvider
 
