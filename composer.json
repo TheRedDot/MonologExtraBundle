@@ -30,7 +30,6 @@
         "phpstan/phpstan": "^0.11.7"
     },
     "config": {
-        "bin-dir": "bin",
         "sort-packages": true
     },
     "extra": {
