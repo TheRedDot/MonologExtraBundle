@@ -40,7 +40,7 @@ class ResponseLogger implements ResponseLoggerInterface
 
     public function getTime(Request $request): ?float
     {
-        if (!$request->server) {
+        if (!$request->server->has('REQUEST_TIME_FLOAT') && !$request->server->has('REQUEST_TIME')) {
             return null;
         }
 
