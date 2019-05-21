@@ -4,6 +4,7 @@ sudo: false
 
 stages:
     - Code style analysis
+    - Static Analysis
     - test
 
 php:
