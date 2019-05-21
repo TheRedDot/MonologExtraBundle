@@ -24,7 +24,7 @@ class ConsoleExceptionListener
             return;
         }
 
-        $exception = $event instanceof ConsoleErrorEvent ? $event->getError() : $event->getException();
+        $exception = $event->getError();
 
         $message = sprintf(
             '%s: %s (uncaught exception) at %s line %s while running console command `%s`',

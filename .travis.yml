@@ -4,6 +4,7 @@ sudo: false
 
 stages:
     - Code style analysis
+    - Static Analysis
     - test
 
 php:
@@ -37,3 +38,8 @@ jobs:
           env: SYMFONY_VERSION=""
           script:
               - ./bin/php-cs-fixer fix --dry-run -v --show-progress=dots --diff-format=udiff
+        - stage: "Static Analysis"
+          php: 7.3
+          env: SYMFONY_VERSION=""
+          script:
+              - ./bin/phpstan analyse

@@ -19,6 +19,10 @@ class CommandListener
 
     public function onCommandResponse(ConsoleCommandEvent $event): void
     {
+        if (null === $event->getCommand()) {
+            return;
+        }
+
         $this->commandLogger->logCommand($event->getCommand(), $event->getInput(), $event->getOutput());
     }
 }
