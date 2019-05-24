@@ -7,3 +7,4 @@
 /phpspec.yml.dist export-ignore
 /doc export-ignore
 /spec export-ignore
+/phpstan.neon export-ignore
