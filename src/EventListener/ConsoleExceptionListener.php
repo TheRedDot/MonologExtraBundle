@@ -20,7 +20,7 @@ class ConsoleExceptionListener
     public function onConsoleException(ConsoleErrorEvent $event): void
     {
         $command = $event->getCommand();
-        if (!$command) {
+        if (null === $command) {
             return;
         }
 
