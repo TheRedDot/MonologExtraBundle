@@ -51,7 +51,7 @@ class ResponseLogger implements ResponseLoggerInterface
         $time = microtime(true) - $startTime;
         $time = round($time * 1000);
 
-        return (float) $time;
+        return $time;
     }
 
     protected function createContext(Response $response, Request $request): array

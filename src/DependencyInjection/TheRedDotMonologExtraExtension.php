@@ -47,7 +47,7 @@ class TheRedDotMonologExtraExtension extends Extension
         $this->addRequestIdToResponseListener($container, $config);
     }
 
-    protected function addAdditions(ContainerBuilder $container, array $config)
+    private function addAdditions(ContainerBuilder $container, array $config): void
     {
         $definition = $container->getDefinition(AdditionsProcessor::class);
 
@@ -56,7 +56,7 @@ class TheRedDotMonologExtraExtension extends Extension
             ->addArgument($config['processor']['additions']);
     }
 
-    protected function addProcessors(ContainerBuilder $container, array $config)
+    private function addProcessors(ContainerBuilder $container, array $config): void
     {
         if ($config['processor']['user']) {
             $definition = $container->getDefinition(UserProcessor::class);
@@ -80,7 +80,7 @@ class TheRedDotMonologExtraExtension extends Extension
         }
     }
 
-    protected function addConsoleExceptionListener(ContainerBuilder $container, array $config)
+    private function addConsoleExceptionListener(ContainerBuilder $container, array $config): void
     {
         if (!$config['logger']['on_console_exception']) {
             $container->removeDefinition(ConsoleExceptionListener::class);
@@ -92,7 +92,7 @@ class TheRedDotMonologExtraExtension extends Extension
         $definition->addTag('kernel.event_listener', ['event' => ConsoleEvents::ERROR, 'method' => 'onConsoleException']);
     }
 
-    protected function addRequestResponseListener(ContainerBuilder $container, array $config)
+    private function addRequestResponseListener(ContainerBuilder $container, array $config): void
     {
         if (!$config['logger']['on_request'] && !$config['logger']['on_response']) {
             $container->removeDefinition(RequestResponseListener::class);
@@ -111,7 +111,7 @@ class TheRedDotMonologExtraExtension extends Extension
         }
     }
 
-    protected function addCommandListener(ContainerBuilder $container, array $config)
+    private function addCommandListener(ContainerBuilder $container, array $config): void
     {
         if (!$config['logger']['on_command']) {
             $container->removeDefinition(CommandListener::class);
@@ -123,7 +123,7 @@ class TheRedDotMonologExtraExtension extends Extension
         $definition->addTag('kernel.event_listener', ['event' => ConsoleEvents::COMMAND, 'method' => 'onCommandResponse']);
     }
 
-    protected function addRequestIdToResponseListener(ContainerBuilder $container, array $config)
+    private function addRequestIdToResponseListener(ContainerBuilder $container, array $config): void
     {
         if (!$config['logger']['add_request_id_to_response']) {
             $container->removeDefinition(RequestIdResponseListener::class);
