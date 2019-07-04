@@ -2,13 +2,11 @@
     "name": "thereddot/monolog-extra-bundle",
     "type": "symfony-bundle",
     "description": "Symfony bundle with extra processors and logger to log request/response",
-    "keywords": ["log", "logging"],
+    "keywords": [
+        "log",
+        "logging"
+    ],
     "license": "MIT",
-    "autoload": {
-        "psr-4": {
-          "TheRedDot\\MonologExtraBundle\\": "src"
-        }
-    },
     "authors": [
         {
             "name": "Floran Brutel",
@@ -17,12 +15,15 @@
     ],
     "require": {
         "php": "^7.1.0",
-        "symfony/security": "^3.4 || ^4.0",
-        "symfony/config":"^3.4 || ^4.0",
-        "symfony/http-foundation": "^3.4 || ^4.0",
+        "symfony/config": "^3.4 || ^4.0",
         "symfony/dependency-injection": "^3.4 || ^4.0",
+        "symfony/http-foundation": "^3.4 || ^4.0",
         "symfony/http-kernel": "^3.4 || ^4.0",
-        "symfony/monolog-bundle": "^2.8 || ^3.0"
+        "symfony/monolog-bundle": "^2.8 || ^3.0",
+        "symfony/security": "^3.4 || ^4.0"
+    },
+    "replace": {
+        "hexanet/monolog-extra-bundle": "self.version"
     },
     "require-dev": {
         "friendsofphp/php-cs-fixer": "^2.15",
@@ -38,7 +39,9 @@
             "dev-master": "4.0-dev"
         }
     },
-    "replace": {
-        "hexanet/monolog-extra-bundle": "self.version"
+    "autoload": {
+        "psr-4": {
+            "TheRedDot\\MonologExtraBundle\\": "src"
+        }
     }
 }
