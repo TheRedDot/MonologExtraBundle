@@ -34,11 +34,11 @@ final class SymfonyUserProvider implements UserProviderInterface
      */
     private $propertyName;
 
-    public function __construct(TokenStorageInterface $tokenStorage = null, PropertyAccessorInterface $propertyAccessor = null)
+    public function __construct(TokenStorageInterface $tokenStorage = null, PropertyAccessorInterface $propertyAccessor = null, string $propertyName = 'username')
     {
         $this->tokenStorage = $tokenStorage;
         $this->propertyAccessor = $propertyAccessor ?: PropertyAccess::createPropertyAccessor();
-        $this->propertyName = 'username';
+        $this->propertyName = $propertyName;
     }
 
     public function getUser(): string
@@ -57,10 +57,5 @@ final class SymfonyUserProvider implements UserProviderInterface
         }
 
         return $user;
-    }
-
-    public function setPropertyName(string $propertyName): void
-    {
-        $this->propertyName = $propertyName;
     }
 }

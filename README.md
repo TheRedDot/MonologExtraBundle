@@ -75,10 +75,18 @@ the_red_dot_monolog_extra:
         user: true
 ```
 
-The default provider returns:
+The default provider `SymfonyUserProvider` returns:
 * anonymous when no user is logged
 * the username of the current logged user
 * cli
+
+You can customize the provider to replace the username by another property :
+
+```yaml
+    TheRedDot\MonologExtraBundle\Provider\User\SymfonyUserProvider:
+        arguments:
+            $propertyName: myCustomProperty
+```
 
 You can create your own provider by creating a service that implements *TheRedDot\MonologExtraBundle\Provider\User\UserProviderInterface*.
 
