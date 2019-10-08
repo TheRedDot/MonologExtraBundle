@@ -12,12 +12,12 @@ final class SymfonyUserProvider implements UserProviderInterface
     /**
      * User for anonymous.
      */
-    public const USER_ANONYMOUS = 'anonymous';
+    private const USER_ANONYMOUS = 'anonymous';
 
     /**
      * Value for user when we are in cli.
      */
-    public const USER_CLI = 'cli';
+    private const USER_CLI = 'cli';
 
     /**
      * @var TokenStorageInterface|null

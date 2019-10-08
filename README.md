@@ -80,7 +80,7 @@ The default provider `SymfonyUserProvider` returns:
 * the username of the current logged user
 * cli
 
-You can customize the provider to replace the username by another property :
+You can customize the provider to replace the username by another property:
 
 ```yaml
     TheRedDot\MonologExtraBundle\Provider\User\SymfonyUserProvider:
