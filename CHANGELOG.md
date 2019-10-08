@@ -1,5 +1,13 @@
 # CHANGELOG
 
+## 4.1.0
+
+Allow to configure the property of SymfonyUserProvider
+
+## 4.0.1
+
+Fix deprecation for symfony/config 4.2+
+
 ## 4.0.0
 
 * UID feature is now called Request id (#4)
