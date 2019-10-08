@@ -2,6 +2,8 @@
 
 namespace TheRedDot\MonologExtraBundle\Provider\User;
 
+use Symfony\Component\PropertyAccess\PropertyAccess;
+use Symfony\Component\PropertyAccess\PropertyAccessorInterface;
 use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
 
@@ -10,21 +12,33 @@ final class SymfonyUserProvider implements UserProviderInterface
     /**
      * User for anonymous.
      */
-    const USER_ANONYMOUS = 'anonymous';
+    private const USER_ANONYMOUS = 'anonymous';
 
     /**
      * Value for user when we are in cli.
      */
-    const USER_CLI = 'cli';
+    private const USER_CLI = 'cli';
 
     /**
      * @var TokenStorageInterface|null
      */
     private $tokenStorage;
 
-    public function __construct(TokenStorageInterface $tokenStorage = null)
+    /**
+     * @var PropertyAccessorInterface
+     */
+    private $propertyAccessor;
+
+    /**
+     * @var string
+     */
+    private $propertyName;
+
+    public function __construct(TokenStorageInterface $tokenStorage = null, string $propertyName = 'username', PropertyAccessorInterface $propertyAccessor = null)
     {
         $this->tokenStorage = $tokenStorage;
+        $this->propertyAccessor = $propertyAccessor ?: PropertyAccess::createPropertyAccessor();
+        $this->propertyName = $propertyName;
     }
 
     public function getUser(): string
@@ -34,7 +48,7 @@ final class SymfonyUserProvider implements UserProviderInterface
         if (null !== $this->tokenStorage) {
             $token = $this->tokenStorage->getToken();
             if (null !== $token && $token->getUser() instanceof UserInterface) {
-                $user = $token->getUser()->getUsername();
+                $user = $this->propertyAccessor->getValue($token->getUser(), $this->propertyName);
             }
         }
 
