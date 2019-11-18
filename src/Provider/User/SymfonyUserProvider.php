@@ -32,12 +32,22 @@ final class SymfonyUserProvider implements UserProviderInterface
     /**
      * @var string
      */
+    private $className;
+
+    /**
+     * @var string
+     */
     private $propertyName;
 
-    public function __construct(TokenStorageInterface $tokenStorage = null, string $propertyName = 'username', PropertyAccessorInterface $propertyAccessor = null)
-    {
+    public function __construct(
+        TokenStorageInterface $tokenStorage = null,
+        string $className = UserInterface::class,
+        string $propertyName = 'username',
+        PropertyAccessorInterface $propertyAccessor = null
+    ) {
         $this->tokenStorage = $tokenStorage;
         $this->propertyAccessor = $propertyAccessor ?: PropertyAccess::createPropertyAccessor();
+        $this->className = $className;
         $this->propertyName = $propertyName;
     }
 
@@ -47,7 +57,7 @@ final class SymfonyUserProvider implements UserProviderInterface
 
         if (null !== $this->tokenStorage) {
             $token = $this->tokenStorage->getToken();
-            if (null !== $token && $token->getUser() instanceof UserInterface) {
+            if (null !== $token && $token->getUser() instanceof $this->className) {
                 $user = $this->propertyAccessor->getValue($token->getUser(), $this->propertyName);
             }
         }

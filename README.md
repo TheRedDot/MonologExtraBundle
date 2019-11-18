@@ -85,6 +85,7 @@ You can customize the provider to replace the username by another property:
 ```yaml
     TheRedDot\MonologExtraBundle\Provider\User\SymfonyUserProvider:
         arguments:
+            $className: App\Entity\User
             $propertyName: myCustomProperty
 ```
 
