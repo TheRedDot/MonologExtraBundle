@@ -2,8 +2,8 @@
 
 namespace spec\TheRedDot\MonologExtraBundle\Processor;
 
-use TheRedDot\MonologExtraBundle\Processor\AdditionsProcessor;
 use PhpSpec\ObjectBehavior;
+use TheRedDot\MonologExtraBundle\Processor\AdditionsProcessor;
 
 class AdditionsProcessorSpec extends ObjectBehavior
 {

@@ -2,8 +2,8 @@
 
 namespace TheRedDot\MonologExtraBundle\EventListener;
 
-use TheRedDot\MonologExtraBundle\Logger\Command\CommandLoggerInterface;
 use Symfony\Component\Console\Event\ConsoleCommandEvent;
+use TheRedDot\MonologExtraBundle\Logger\Command\CommandLoggerInterface;
 
 class CommandListener
 {

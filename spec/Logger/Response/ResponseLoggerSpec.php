@@ -2,13 +2,13 @@
 
 namespace spec\TheRedDot\MonologExtraBundle\Logger\Response;
 
-use TheRedDot\MonologExtraBundle\Logger\Response\ResponseLogger;
-use TheRedDot\MonologExtraBundle\Logger\Response\ResponseLoggerInterface;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
 use Psr\Log\LoggerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use TheRedDot\MonologExtraBundle\Logger\Response\ResponseLogger;
+use TheRedDot\MonologExtraBundle\Logger\Response\ResponseLoggerInterface;
 
 class ResponseLoggerSpec extends ObjectBehavior
 {

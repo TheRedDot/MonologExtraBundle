@@ -2,9 +2,9 @@
 
 namespace spec\TheRedDot\MonologExtraBundle\Provider\RequestId;
 
+use PhpSpec\ObjectBehavior;
 use TheRedDot\MonologExtraBundle\Provider\RequestId\RequestIdProviderInterface;
 use TheRedDot\MonologExtraBundle\Provider\RequestId\UniqidProvider;
-use PhpSpec\ObjectBehavior;
 
 class UniqidProviderSpec extends ObjectBehavior
 {

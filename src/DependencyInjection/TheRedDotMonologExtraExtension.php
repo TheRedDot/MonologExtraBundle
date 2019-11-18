@@ -2,23 +2,23 @@
 
 namespace TheRedDot\MonologExtraBundle\DependencyInjection;
 
+use Symfony\Component\Config\FileLocator;
+use Symfony\Component\Console\ConsoleEvents;
+use Symfony\Component\DependencyInjection\ContainerBuilder;
+use Symfony\Component\DependencyInjection\Loader;
+use Symfony\Component\HttpKernel\DependencyInjection\Extension;
+use Symfony\Component\HttpKernel\KernelEvents;
 use TheRedDot\MonologExtraBundle\EventListener\CommandListener;
 use TheRedDot\MonologExtraBundle\EventListener\ConsoleExceptionListener;
-use TheRedDot\MonologExtraBundle\EventListener\RequestResponseListener;
 use TheRedDot\MonologExtraBundle\EventListener\RequestIdResponseListener;
+use TheRedDot\MonologExtraBundle\EventListener\RequestResponseListener;
 use TheRedDot\MonologExtraBundle\Processor\AdditionsProcessor;
-use TheRedDot\MonologExtraBundle\Processor\SessionIdProcessor;
 use TheRedDot\MonologExtraBundle\Processor\RequestIdProcessor;
+use TheRedDot\MonologExtraBundle\Processor\SessionIdProcessor;
 use TheRedDot\MonologExtraBundle\Processor\UserProcessor;
 use TheRedDot\MonologExtraBundle\Provider\RequestId\RequestIdProviderInterface;
 use TheRedDot\MonologExtraBundle\Provider\Session\SessionIdProviderInterface;
 use TheRedDot\MonologExtraBundle\Provider\User\UserProviderInterface;
-use Symfony\Component\Console\ConsoleEvents;
-use Symfony\Component\DependencyInjection\ContainerBuilder;
-use Symfony\Component\Config\FileLocator;
-use Symfony\Component\HttpKernel\DependencyInjection\Extension;
-use Symfony\Component\DependencyInjection\Loader;
-use Symfony\Component\HttpKernel\KernelEvents;
 
 class TheRedDotMonologExtraExtension extends Extension
 {

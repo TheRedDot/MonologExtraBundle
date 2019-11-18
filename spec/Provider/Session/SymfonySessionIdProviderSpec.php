@@ -2,9 +2,9 @@
 
 namespace spec\TheRedDot\MonologExtraBundle\Provider\Session;
 
-use TheRedDot\MonologExtraBundle\Provider\Session\SessionIdProviderInterface;
 use PhpSpec\ObjectBehavior;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
+use TheRedDot\MonologExtraBundle\Provider\Session\SessionIdProviderInterface;
 use TheRedDot\MonologExtraBundle\Provider\Session\SymfonySessionIdProvider;
 
 class SymfonySessionIdProviderSpec extends ObjectBehavior

@@ -2,10 +2,10 @@
 
 namespace spec\TheRedDot\MonologExtraBundle\Provider\User;
 
-use TheRedDot\MonologExtraBundle\Provider\User\SymfonyUserProvider;
-use TheRedDot\MonologExtraBundle\Provider\User\UserProviderInterface;
 use PhpSpec\ObjectBehavior;
 use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInterface;
+use TheRedDot\MonologExtraBundle\Provider\User\SymfonyUserProvider;
+use TheRedDot\MonologExtraBundle\Provider\User\UserProviderInterface;
 
 class SymfonyUserProviderSpec extends ObjectBehavior
 {

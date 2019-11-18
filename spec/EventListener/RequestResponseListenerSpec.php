@@ -2,8 +2,8 @@
 
 namespace spec\TheRedDot\MonologExtraBundle\EventListener;
 
-use TheRedDot\MonologExtraBundle\EventListener\RequestResponseListener;
 use PhpSpec\ObjectBehavior;
+use TheRedDot\MonologExtraBundle\EventListener\RequestResponseListener;
 use TheRedDot\MonologExtraBundle\Logger\Request\RequestLoggerInterface;
 use TheRedDot\MonologExtraBundle\Logger\Response\ResponseLoggerInterface;
 
