@@ -2,8 +2,8 @@
 
 namespace spec\TheRedDot\MonologExtraBundle\EventListener;
 
-use TheRedDot\MonologExtraBundle\EventListener\CommandListener;
 use PhpSpec\ObjectBehavior;
+use TheRedDot\MonologExtraBundle\EventListener\CommandListener;
 use TheRedDot\MonologExtraBundle\Logger\Command\CommandLoggerInterface;
 
 class CommandListenerSpec extends ObjectBehavior

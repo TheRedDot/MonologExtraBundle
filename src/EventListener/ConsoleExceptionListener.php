@@ -2,8 +2,8 @@
 
 namespace TheRedDot\MonologExtraBundle\EventListener;
 
-use Symfony\Component\Console\Event\ConsoleErrorEvent;
 use Psr\Log\LoggerInterface;
+use Symfony\Component\Console\Event\ConsoleErrorEvent;
 
 class ConsoleExceptionListener
 {

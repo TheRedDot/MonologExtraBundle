@@ -2,8 +2,8 @@
 
 namespace spec\TheRedDot\MonologExtraBundle\Processor;
 
-use TheRedDot\MonologExtraBundle\Processor\SessionIdProcessor;
 use PhpSpec\ObjectBehavior;
+use TheRedDot\MonologExtraBundle\Processor\SessionIdProcessor;
 use TheRedDot\MonologExtraBundle\Provider\Session\SessionIdProviderInterface;
 
 class SessionIdProcessorSpec extends ObjectBehavior

@@ -2,9 +2,9 @@
 
 namespace spec\TheRedDot\MonologExtraBundle\Processor;
 
+use PhpSpec\ObjectBehavior;
 use TheRedDot\MonologExtraBundle\Processor\UserProcessor;
 use TheRedDot\MonologExtraBundle\Provider\User\UserProviderInterface;
-use PhpSpec\ObjectBehavior;
 
 class UserProcessorSpec extends ObjectBehavior
 {

@@ -2,8 +2,8 @@
 
 namespace TheRedDot\MonologExtraBundle\EventListener;
 
-use TheRedDot\MonologExtraBundle\Provider\RequestId\RequestIdProviderInterface;
 use Symfony\Component\HttpKernel\Event\FilterResponseEvent;
+use TheRedDot\MonologExtraBundle\Provider\RequestId\RequestIdProviderInterface;
 
 class RequestIdResponseListener
 {

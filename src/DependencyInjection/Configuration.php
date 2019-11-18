@@ -2,11 +2,11 @@
 
 namespace TheRedDot\MonologExtraBundle\DependencyInjection;
 
-use TheRedDot\MonologExtraBundle\Provider\Session\SymfonySessionIdProvider;
-use TheRedDot\MonologExtraBundle\Provider\RequestId\UniqidProvider;
-use TheRedDot\MonologExtraBundle\Provider\User\SymfonyUserProvider;
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
+use TheRedDot\MonologExtraBundle\Provider\RequestId\UniqidProvider;
+use TheRedDot\MonologExtraBundle\Provider\Session\SymfonySessionIdProvider;
+use TheRedDot\MonologExtraBundle\Provider\User\SymfonyUserProvider;
 
 class Configuration implements ConfigurationInterface
 {

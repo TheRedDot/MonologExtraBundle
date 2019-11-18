@@ -2,14 +2,14 @@
 
 namespace spec\TheRedDot\MonologExtraBundle\Logger\Command;
 
-use TheRedDot\MonologExtraBundle\Logger\Command\CommandLogger;
-use TheRedDot\MonologExtraBundle\Logger\Command\CommandLoggerInterface;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
 use Psr\Log\LoggerInterface;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
+use TheRedDot\MonologExtraBundle\Logger\Command\CommandLogger;
+use TheRedDot\MonologExtraBundle\Logger\Command\CommandLoggerInterface;
 
 class CommandLoggerSpec extends ObjectBehavior
 {

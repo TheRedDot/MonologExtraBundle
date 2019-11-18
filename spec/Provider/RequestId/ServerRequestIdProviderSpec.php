@@ -2,9 +2,9 @@
 
 namespace spec\TheRedDot\MonologExtraBundle\Provider\RequestId;
 
-use TheRedDot\MonologExtraBundle\Provider\RequestId\ServerRequestIdProvider;
-use TheRedDot\MonologExtraBundle\Provider\RequestId\RequestIdProviderInterface;
 use PhpSpec\ObjectBehavior;
+use TheRedDot\MonologExtraBundle\Provider\RequestId\RequestIdProviderInterface;
+use TheRedDot\MonologExtraBundle\Provider\RequestId\ServerRequestIdProvider;
 
 class ServerRequestIdProviderSpec extends ObjectBehavior
 {

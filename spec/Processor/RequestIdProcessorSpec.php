@@ -2,8 +2,8 @@
 
 namespace spec\TheRedDot\MonologExtraBundle\Processor;
 
-use TheRedDot\MonologExtraBundle\Processor\RequestIdProcessor;
 use PhpSpec\ObjectBehavior;
+use TheRedDot\MonologExtraBundle\Processor\RequestIdProcessor;
 use TheRedDot\MonologExtraBundle\Provider\RequestId\RequestIdProviderInterface;
 
 class RequestIdProcessorSpec extends ObjectBehavior
