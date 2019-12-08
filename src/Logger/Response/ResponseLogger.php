@@ -54,6 +54,12 @@ class ResponseLogger implements ResponseLoggerInterface
         return $time;
     }
 
+    /**
+     * @param Response $response
+     * @param Request  $request
+     *
+     * @return array<string, mixed>
+     */
     protected function createContext(Response $response, Request $request): array
     {
         $context = [
