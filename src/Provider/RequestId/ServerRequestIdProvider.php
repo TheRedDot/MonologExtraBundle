@@ -10,7 +10,6 @@ final class ServerRequestIdProvider implements RequestIdProviderInterface
     private $requestId;
 
     /**
-     * @param string            $serverField
      * @param array<mixed>|null $serverData
      */
     public function __construct(string $serverField, array $serverData = null)

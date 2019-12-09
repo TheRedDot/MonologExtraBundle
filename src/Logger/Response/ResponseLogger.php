@@ -55,9 +55,6 @@ class ResponseLogger implements ResponseLoggerInterface
     }
 
     /**
-     * @param Response $response
-     * @param Request  $request
-     *
      * @return array<string, mixed>
      */
     protected function createContext(Response $response, Request $request): array

@@ -23,8 +23,7 @@ use TheRedDot\MonologExtraBundle\Provider\User\UserProviderInterface;
 class TheRedDotMonologExtraExtension extends Extension
 {
     /**
-     * @param array<mixed>     $configs
-     * @param ContainerBuilder $container
+     * @param array<mixed> $configs
      */
     public function load(array $configs, ContainerBuilder $container)
     {
@@ -49,8 +48,7 @@ class TheRedDotMonologExtraExtension extends Extension
     }
 
     /**
-     * @param array<mixed>     $config
-     * @param ContainerBuilder $container
+     * @param array<mixed> $config
      */
     private function addAdditions(array $config, ContainerBuilder $container): void
     {
@@ -62,8 +60,7 @@ class TheRedDotMonologExtraExtension extends Extension
     }
 
     /**
-     * @param array<mixed>     $config
-     * @param ContainerBuilder $container
+     * @param array<mixed> $config
      */
     private function addProcessors(array $config, ContainerBuilder $container): void
     {
@@ -90,8 +87,7 @@ class TheRedDotMonologExtraExtension extends Extension
     }
 
     /**
-     * @param array<mixed>     $config
-     * @param ContainerBuilder $container
+     * @param array<mixed> $config
      */
     private function addConsoleExceptionListener(array $config, ContainerBuilder $container): void
     {
@@ -106,8 +102,7 @@ class TheRedDotMonologExtraExtension extends Extension
     }
 
     /**
-     * @param array<mixed>     $config
-     * @param ContainerBuilder $container
+     * @param array<mixed> $config
      */
     private function addRequestResponseListener(array $config, ContainerBuilder $container): void
     {
@@ -129,8 +124,7 @@ class TheRedDotMonologExtraExtension extends Extension
     }
 
     /**
-     * @param array<mixed>     $config
-     * @param ContainerBuilder $container
+     * @param array<mixed> $config
      */
     private function addCommandListener(array $config, ContainerBuilder $container): void
     {
@@ -145,8 +139,7 @@ class TheRedDotMonologExtraExtension extends Extension
     }
 
     /**
-     * @param array<mixed>     $config
-     * @param ContainerBuilder $container
+     * @param array<mixed> $config
      */
     private function addRequestIdToResponseListener(array $config, ContainerBuilder $container): void
     {
