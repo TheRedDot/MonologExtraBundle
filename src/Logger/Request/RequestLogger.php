@@ -28,6 +28,11 @@ class RequestLogger implements RequestLoggerInterface
         $this->logger->info($msg, $this->createContexts($request));
     }
 
+    /**
+     * @param Request $request
+     *
+     * @return array<string, mixed>
+     */
     public function createContexts(Request $request): array
     {
         $map = [

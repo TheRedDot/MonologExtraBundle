@@ -29,6 +29,13 @@ class CommandLogger implements CommandLoggerInterface
         $this->logger->info($msg, $this->createContexts($command, $input, $output));
     }
 
+    /**
+     * @param Command         $command
+     * @param InputInterface  $input
+     * @param OutputInterface $output
+     *
+     * @return array<string, mixed>
+     */
     public function createContexts(Command $command, InputInterface $input, OutputInterface $output): array
     {
         $map = [

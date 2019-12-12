@@ -19,6 +19,11 @@ class SessionIdProcessor
         $this->sessionIdProvider = $sessionIdProvider;
     }
 
+    /**
+     * @param array<mixed> $record
+     *
+     * @return array<mixed>
+     */
     public function processRecord(array $record): array
     {
         $record['extra']['session_id'] = $this->sessionIdProvider->getSessionId();

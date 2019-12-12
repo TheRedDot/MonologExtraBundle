@@ -19,6 +19,11 @@ class UserProcessor
         $this->userProvider = $userProvider;
     }
 
+    /**
+     * @param array<mixed> $record
+     *
+     * @return array<mixed>
+     */
     public function processRecord(array $record): array
     {
         $record['extra']['user'] = $this->userProvider->getUser();

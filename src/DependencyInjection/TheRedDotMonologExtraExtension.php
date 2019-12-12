@@ -23,7 +23,7 @@ use TheRedDot\MonologExtraBundle\Provider\User\UserProviderInterface;
 class TheRedDotMonologExtraExtension extends Extension
 {
     /**
-     * {@inheritdoc}
+     * @param array<mixed> $configs
      */
     public function load(array $configs, ContainerBuilder $container)
     {
@@ -39,15 +39,18 @@ class TheRedDotMonologExtraExtension extends Extension
         $container->setAlias(SessionIdProviderInterface::class, $config['provider']['session_id']);
         $container->setAlias(UserProviderInterface::class, $config['provider']['user']);
 
-        $this->addAdditions($container, $config);
-        $this->addProcessors($container, $config);
-        $this->addConsoleExceptionListener($container, $config);
-        $this->addRequestResponseListener($container, $config);
-        $this->addCommandListener($container, $config);
-        $this->addRequestIdToResponseListener($container, $config);
+        $this->addAdditions($config, $container);
+        $this->addProcessors($config, $container);
+        $this->addConsoleExceptionListener($config, $container);
+        $this->addRequestResponseListener($config, $container);
+        $this->addCommandListener($config, $container);
+        $this->addRequestIdToResponseListener($config, $container);
     }
 
-    private function addAdditions(ContainerBuilder $container, array $config): void
+    /**
+     * @param array<mixed> $config
+     */
+    private function addAdditions(array $config, ContainerBuilder $container): void
     {
         $definition = $container->getDefinition(AdditionsProcessor::class);
 
@@ -56,7 +59,10 @@ class TheRedDotMonologExtraExtension extends Extension
             ->addArgument($config['processor']['additions']);
     }
 
-    private function addProcessors(ContainerBuilder $container, array $config): void
+    /**
+     * @param array<mixed> $config
+     */
+    private function addProcessors(array $config, ContainerBuilder $container): void
     {
         if ($config['processor']['user']) {
             $definition = $container->getDefinition(UserProcessor::class);
@@ -80,7 +86,10 @@ class TheRedDotMonologExtraExtension extends Extension
         }
     }
 
-    private function addConsoleExceptionListener(ContainerBuilder $container, array $config): void
+    /**
+     * @param array<mixed> $config
+     */
+    private function addConsoleExceptionListener(array $config, ContainerBuilder $container): void
     {
         if (!$config['logger']['on_console_exception']) {
             $container->removeDefinition(ConsoleExceptionListener::class);
@@ -92,7 +101,10 @@ class TheRedDotMonologExtraExtension extends Extension
         $definition->addTag('kernel.event_listener', ['event' => ConsoleEvents::ERROR, 'method' => 'onConsoleException']);
     }
 
-    private function addRequestResponseListener(ContainerBuilder $container, array $config): void
+    /**
+     * @param array<mixed> $config
+     */
+    private function addRequestResponseListener(array $config, ContainerBuilder $container): void
     {
         if (!$config['logger']['on_request'] && !$config['logger']['on_response']) {
             $container->removeDefinition(RequestResponseListener::class);
@@ -111,7 +123,10 @@ class TheRedDotMonologExtraExtension extends Extension
         }
     }
 
-    private function addCommandListener(ContainerBuilder $container, array $config): void
+    /**
+     * @param array<mixed> $config
+     */
+    private function addCommandListener(array $config, ContainerBuilder $container): void
     {
         if (!$config['logger']['on_command']) {
             $container->removeDefinition(CommandListener::class);
@@ -123,7 +138,10 @@ class TheRedDotMonologExtraExtension extends Extension
         $definition->addTag('kernel.event_listener', ['event' => ConsoleEvents::COMMAND, 'method' => 'onCommandResponse']);
     }
 
-    private function addRequestIdToResponseListener(ContainerBuilder $container, array $config): void
+    /**
+     * @param array<mixed> $config
+     */
+    private function addRequestIdToResponseListener(array $config, ContainerBuilder $container): void
     {
         if (!$config['logger']['add_request_id_to_response']) {
             $container->removeDefinition(RequestIdResponseListener::class);
