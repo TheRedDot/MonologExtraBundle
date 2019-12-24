@@ -50,6 +50,11 @@ class SymfonySessionIdProviderSpec extends ObjectBehavior
     public function it_returns_specific_id_if_exception(SessionInterface $session)
     {
         $session
+            ->isStarted()
+            ->shouldBeCalled()
+            ->willReturn(false);
+
+        $session
             ->start()
             ->willThrow(\RuntimeException::class);
 
