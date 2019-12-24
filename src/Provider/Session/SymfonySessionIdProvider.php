@@ -6,7 +6,7 @@ use Symfony\Component\HttpFoundation\Session\SessionInterface;
 
 final class SymfonySessionIdProvider implements SessionIdProviderInterface
 {
-    const SESSION_ID_UNKNOWN = 'unknown';
+    public const SESSION_ID_UNKNOWN = 'unknown';
 
     /**
      * @var SessionInterface
