@@ -15,13 +15,13 @@
     ],
     "require": {
         "php": "^7.1.0",
-        "symfony/config": "^3.4 || ^4.0",
-        "symfony/dependency-injection": "^3.4 || ^4.0",
-        "symfony/http-foundation": "^3.4 || ^4.0",
-        "symfony/http-kernel": "^3.4 || ^4.0",
-        "symfony/monolog-bundle": "^2.8 || ^3.0",
-        "symfony/property-access": "^3.4 || ^4.0",
-        "symfony/security-core": "^3.4 || ^4.0"
+        "symfony/config": "^4.4 || ^5.0",
+        "symfony/dependency-injection": "^4.4 || ^5.0",
+        "symfony/http-foundation": "^4.4 || ^5.0",
+        "symfony/http-kernel": "^4.4 || ^5.0",
+        "symfony/monolog-bundle": "^3.0",
+        "symfony/property-access": "^4.4 || ^5.0",
+        "symfony/security-core": "^4.4 || ^5.0"
     },
     "replace": {
         "hexanet/monolog-extra-bundle": "self.version"
@@ -30,7 +30,7 @@
         "phpspec/phpspec": "^5.1|^6.0",
         "phpstan/phpstan": "^0.12.1",
         "phpstan/phpstan-strict-rules": "^0.12.0",
-        "symplify/easy-coding-standard": "^6.0"
+        "symplify/easy-coding-standard": "^6.0|^7.0"
     },
     "config": {
         "sort-packages": true

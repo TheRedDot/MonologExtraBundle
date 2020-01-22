@@ -2,7 +2,7 @@
 
 namespace TheRedDot\MonologExtraBundle\EventListener;
 
-use Symfony\Component\HttpKernel\Event\FilterResponseEvent;
+use Symfony\Component\HttpKernel\Event\ResponseEvent;
 use TheRedDot\MonologExtraBundle\Provider\RequestId\RequestIdProviderInterface;
 
 class RequestIdResponseListener
@@ -17,7 +17,7 @@ class RequestIdResponseListener
         $this->requestIdProvider = $requestIdProvider;
     }
 
-    public function onKernelResponse(FilterResponseEvent $event): void
+    public function onKernelResponse(ResponseEvent $event): void
     {
         $event->getResponse()->headers->set('X-Request-ID', $this->requestIdProvider->getRequestId());
     }
