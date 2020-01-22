@@ -5,7 +5,6 @@ namespace spec\TheRedDot\MonologExtraBundle\Logger\Request;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
 use Psr\Log\LoggerInterface;
-use Symfony\Component\HttpFoundation\ParameterBag;
 use Symfony\Component\HttpFoundation\Request;
 use TheRedDot\MonologExtraBundle\Logger\Request\RequestLogger;
 use TheRedDot\MonologExtraBundle\Logger\Request\RequestLoggerInterface;
@@ -27,13 +26,13 @@ class RequestLoggerSpec extends ObjectBehavior
         $this->shouldImplement(RequestLoggerInterface::class);
     }
 
-    public function it_logs_request(LoggerInterface $logger, Request $request, ParameterBag $parameterBag)
+    public function it_logs_request(LoggerInterface $logger)
     {
         $logger
             ->info(Argument::type('string'), Argument::type('array'))
             ->shouldBeCalled();
 
-        $request->attributes = $parameterBag;
+        $request = new Request();
 
         $this->logRequest($request);
     }

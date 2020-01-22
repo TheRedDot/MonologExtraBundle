@@ -2,8 +2,8 @@
 
 namespace TheRedDot\MonologExtraBundle\EventListener;
 
-use Symfony\Component\HttpKernel\Event\FilterResponseEvent;
-use Symfony\Component\HttpKernel\Event\GetResponseEvent;
+use Symfony\Component\HttpKernel\Event\RequestEvent;
+use Symfony\Component\HttpKernel\Event\ResponseEvent;
 use Symfony\Component\HttpKernel\HttpKernel;
 use TheRedDot\MonologExtraBundle\Logger\Request\RequestLoggerInterface;
 use TheRedDot\MonologExtraBundle\Logger\Response\ResponseLoggerInterface;
@@ -26,7 +26,7 @@ class RequestResponseListener
         $this->responseLogger = $responseLogger;
     }
 
-    public function onRequest(GetResponseEvent $event): void
+    public function onRequest(RequestEvent $event): void
     {
         if (HttpKernel::MASTER_REQUEST !== $event->getRequestType()) {
             return;
@@ -35,7 +35,7 @@ class RequestResponseListener
         $this->requestLogger->logRequest($event->getRequest());
     }
 
-    public function onResponse(FilterResponseEvent $event): void
+    public function onResponse(ResponseEvent $event): void
     {
         $this->responseLogger->logResponse($event->getResponse(), $event->getRequest());
     }
