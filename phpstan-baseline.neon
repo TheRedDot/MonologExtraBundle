@@ -1,0 +1,77 @@
+parameters:
+	ignoreErrors:
+		-
+			message: "#^Parameter \\$event of method TheRedDot\\\\MonologExtraBundle\\\\EventListener\\\\RequestIdResponseListener\\:\\:onKernelResponse\\(\\) has invalid typehint type Symfony\\\\Component\\\\HttpKernel\\\\Event\\\\FilterResponseEvent\\.$#"
+			count: 1
+			path: src/EventListener/RequestIdResponseListener.php
+
+		-
+			message: "#^Class Symfony\\\\Component\\\\HttpKernel\\\\Event\\\\FilterResponseEvent not found\\.$#"
+			count: 1
+			path: src/EventListener/RequestIdResponseListener.php
+
+		-
+			message: "#^Instanceof between Symfony\\\\Component\\\\HttpKernel\\\\Event\\\\ResponseEvent and Symfony\\\\Component\\\\HttpKernel\\\\Event\\\\ResponseEvent will always evaluate to true\\.$#"
+			count: 1
+			path: src/EventListener/RequestIdResponseListener.php
+
+		-
+			message: "#^Result of && is always false\\.$#"
+			count: 1
+			path: src/EventListener/RequestIdResponseListener.php
+
+		-
+			message: "#^Call to method getResponse\\(\\) on an unknown class Symfony\\\\Component\\\\HttpKernel\\\\Event\\\\FilterResponseEvent\\.$#"
+			count: 1
+			path: src/EventListener/RequestIdResponseListener.php
+
+		-
+			message: "#^Parameter \\$event of method TheRedDot\\\\MonologExtraBundle\\\\EventListener\\\\RequestResponseListener\\:\\:onRequest\\(\\) has invalid typehint type Symfony\\\\Component\\\\HttpKernel\\\\Event\\\\GetResponseEvent\\.$#"
+			count: 1
+			path: src/EventListener/RequestResponseListener.php
+
+		-
+			message: "#^Class Symfony\\\\Component\\\\HttpKernel\\\\Event\\\\GetResponseEvent not found\\.$#"
+			count: 1
+			path: src/EventListener/RequestResponseListener.php
+
+		-
+			message: "#^Instanceof between Symfony\\\\Component\\\\HttpKernel\\\\Event\\\\RequestEvent and Symfony\\\\Component\\\\HttpKernel\\\\Event\\\\RequestEvent will always evaluate to true\\.$#"
+			count: 1
+			path: src/EventListener/RequestResponseListener.php
+
+		-
+			message: "#^Result of && is always false\\.$#"
+			count: 2
+			path: src/EventListener/RequestResponseListener.php
+
+		-
+			message: "#^Call to method getRequestType\\(\\) on an unknown class Symfony\\\\Component\\\\HttpKernel\\\\Event\\\\GetResponseEvent\\.$#"
+			count: 1
+			path: src/EventListener/RequestResponseListener.php
+
+		-
+			message: "#^Call to method getRequest\\(\\) on an unknown class Symfony\\\\Component\\\\HttpKernel\\\\Event\\\\GetResponseEvent\\.$#"
+			count: 1
+			path: src/EventListener/RequestResponseListener.php
+
+		-
+			message: "#^PHPDoc tag @param for parameter \\$event with type Symfony\\\\Component\\\\HttpKernel\\\\Event\\\\FilterResponseEvent\\|Symfony\\\\Component\\\\HttpKernel\\\\Event\\\\ResponseEvent is not subtype of native type Symfony\\\\Component\\\\HttpKernel\\\\Event\\\\ResponseEvent\\.$#"
+			count: 1
+			path: src/EventListener/RequestResponseListener.php
+
+		-
+			message: "#^Parameter \\$event of method TheRedDot\\\\MonologExtraBundle\\\\EventListener\\\\RequestResponseListener\\:\\:onResponse\\(\\) has invalid typehint type Symfony\\\\Component\\\\HttpKernel\\\\Event\\\\FilterResponseEvent\\.$#"
+			count: 1
+			path: src/EventListener/RequestResponseListener.php
+
+		-
+			message: "#^Class Symfony\\\\Component\\\\HttpKernel\\\\Event\\\\FilterResponseEvent not found\\.$#"
+			count: 1
+			path: src/EventListener/RequestResponseListener.php
+
+		-
+			message: "#^Instanceof between Symfony\\\\Component\\\\HttpKernel\\\\Event\\\\ResponseEvent and Symfony\\\\Component\\\\HttpKernel\\\\Event\\\\ResponseEvent will always evaluate to true\\.$#"
+			count: 1
+			path: src/EventListener/RequestResponseListener.php
+
