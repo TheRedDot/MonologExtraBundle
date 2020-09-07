@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 5.0.0
+
+* Remove SessionProcessor
+
 ## 4.1.0
 
 Allow to configure the property of SymfonyUserProvider

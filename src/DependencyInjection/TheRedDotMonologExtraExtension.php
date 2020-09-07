@@ -14,10 +14,8 @@ use TheRedDot\MonologExtraBundle\EventListener\RequestIdResponseListener;
 use TheRedDot\MonologExtraBundle\EventListener\RequestResponseListener;
 use TheRedDot\MonologExtraBundle\Processor\AdditionsProcessor;
 use TheRedDot\MonologExtraBundle\Processor\RequestIdProcessor;
-use TheRedDot\MonologExtraBundle\Processor\SessionIdProcessor;
 use TheRedDot\MonologExtraBundle\Processor\UserProcessor;
 use TheRedDot\MonologExtraBundle\Provider\RequestId\RequestIdProviderInterface;
-use TheRedDot\MonologExtraBundle\Provider\Session\SessionIdProviderInterface;
 use TheRedDot\MonologExtraBundle\Provider\User\UserProviderInterface;
 
 class TheRedDotMonologExtraExtension extends Extension
@@ -33,10 +31,7 @@ class TheRedDotMonologExtraExtension extends Extension
         $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('services.yml');
 
-        $container->setParameter('the_red_dot_monolog_extra.session_start', $config['session_start']);
-
         $container->setAlias(RequestIdProviderInterface::class, $config['provider']['request_id']);
-        $container->setAlias(SessionIdProviderInterface::class, $config['provider']['session_id']);
         $container->setAlias(UserProviderInterface::class, $config['provider']['user']);
 
         $this->addAdditions($config, $container);
@@ -76,13 +71,6 @@ class TheRedDotMonologExtraExtension extends Extension
             $definition->addTag('monolog.processor', ['method' => 'processRecord']);
         } else {
             $container->removeDefinition(RequestIdProcessor::class);
-        }
-
-        if ($config['processor']['session_id']) {
-            $definition = $container->getDefinition(SessionIdProcessor::class);
-            $definition->addTag('monolog.processor', ['method' => 'processRecord']);
-        } else {
-            $container->removeDefinition(SessionIdProcessor::class);
         }
     }
 

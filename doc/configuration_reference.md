@@ -9,9 +9,6 @@ the_red_dot_monolog_extra:
         # add the username of the current user
         user: true
 
-        # add the session id
-        session_id: false
-
         # add request id
         request_id: true
 
@@ -43,6 +40,4 @@ the_red_dot_monolog_extra:
         request_id: TheRedDot\MonologExtraBundle\Provider\RequestId\ServerRequestIdProvider
 
         user: TheRedDot\MonologExtraBundle\Provider\User\SymfonyUserProvider
-
-        session_id: TheRedDot\MonologExtraBundle\Provider\Session\SymfonySessionIdProvider
 ```

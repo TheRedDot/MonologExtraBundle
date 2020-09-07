@@ -63,8 +63,7 @@ class AppKernel extends Kernel
 The bundle provides several processors:
 
 * User
-* Session id
-* Request id
+* Request ID
 * Additions
 
 #### User
@@ -97,25 +96,6 @@ You can create your own provider by creating a service that implements *TheRedDo
 the_red_dot_monolog_extra:
     provider:
         user: your_own_provider_service_id
-```
-
-#### Session id
-
-Add the session id in each log entry.
-
-```yaml
-the_red_dot_monolog_extra:
-    session_start: false
-    processor:
-        session_id: true
-```
-
-You can create your own provider by creating a service that implements *TheRedDot\MonologExtraBundle\Provider\Session\SessionIdProviderInterface*.
-
-```yaml
-the_red_dot_monolog_extra:
-    provider:
-        session_id: your_own_provider_service_id
 ```
 
 #### Request id

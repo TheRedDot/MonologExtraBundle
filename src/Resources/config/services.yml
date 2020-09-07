@@ -3,9 +3,6 @@ services:
         autowire: true
         public: false
         autoconfigure: true
-        bind:
-            $startSession: "%the_red_dot_monolog_extra.session_start%"
-            $session: '@?session'
 
     TheRedDot\MonologExtraBundle\:
         resource: '../../{Logger,EventListener,Processor,Provider}'
