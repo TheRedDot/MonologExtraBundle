@@ -48,7 +48,7 @@ class RequestResponseListener
     /**
      * @param ResponseEvent|FilterResponseEvent $event
      */
-    public function onResponse(ResponseEvent $event): void
+    public function onResponse($event): void
     {
         // Compatibility with Symfony < 5 and Symfony >=5
         if (!$event instanceof FilterResponseEvent && !$event instanceof ResponseEvent) {
