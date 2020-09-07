@@ -5,7 +5,7 @@ namespace TheRedDot\MonologExtraBundle\EventListener;
 use Symfony\Component\Console\Event\ConsoleCommandEvent;
 use TheRedDot\MonologExtraBundle\Logger\Command\CommandLoggerInterface;
 
-class CommandListener
+class ConsoleCommandListener
 {
     /**
      * @var CommandLoggerInterface
@@ -17,7 +17,7 @@ class CommandListener
         $this->commandLogger = $commandLogger;
     }
 
-    public function onCommandResponse(ConsoleCommandEvent $event): void
+    public function onConsoleCommand(ConsoleCommandEvent $event): void
     {
         if (null === $event->getCommand()) {
             return;

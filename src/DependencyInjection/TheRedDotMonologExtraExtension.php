@@ -8,7 +8,7 @@ use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Loader;
 use Symfony\Component\HttpKernel\DependencyInjection\Extension;
 use Symfony\Component\HttpKernel\KernelEvents;
-use TheRedDot\MonologExtraBundle\EventListener\CommandListener;
+use TheRedDot\MonologExtraBundle\EventListener\ConsoleCommandListener;
 use TheRedDot\MonologExtraBundle\EventListener\ConsoleExceptionListener;
 use TheRedDot\MonologExtraBundle\EventListener\RequestIdResponseListener;
 use TheRedDot\MonologExtraBundle\EventListener\RequestResponseListener;
@@ -98,7 +98,7 @@ class TheRedDotMonologExtraExtension extends Extension
         }
 
         $definition = $container->getDefinition(ConsoleExceptionListener::class);
-        $definition->addTag('kernel.event_listener', ['event' => ConsoleEvents::ERROR, 'method' => 'onConsoleException']);
+        $definition->addTag('kernel.event_listener', ['event' => ConsoleEvents::ERROR, 'method' => 'onConsoleError']);
     }
 
     /**
@@ -129,13 +129,13 @@ class TheRedDotMonologExtraExtension extends Extension
     private function addCommandListener(array $config, ContainerBuilder $container): void
     {
         if (!$config['logger']['on_command']) {
-            $container->removeDefinition(CommandListener::class);
+            $container->removeDefinition(ConsoleCommandListener::class);
 
             return;
         }
 
-        $definition = $container->getDefinition(CommandListener::class);
-        $definition->addTag('kernel.event_listener', ['event' => ConsoleEvents::COMMAND, 'method' => 'onCommandResponse']);
+        $definition = $container->getDefinition(ConsoleCommandListener::class);
+        $definition->addTag('kernel.event_listener', ['event' => ConsoleEvents::COMMAND, 'method' => 'onConsoleCommand']);
     }
 
     /**

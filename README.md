@@ -166,6 +166,10 @@ Create a log entry with the request data.
 
 Create a log entry with the response data.
 
+#### On console command
+
+Create a log entry before executing any command.
+
 #### On console exception
 
 Create a log entry when an exception occurs in console.
