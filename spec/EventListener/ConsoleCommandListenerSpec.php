@@ -6,7 +6,7 @@ use PhpSpec\ObjectBehavior;
 use TheRedDot\MonologExtraBundle\EventListener\ConsoleCommandListener;
 use TheRedDot\MonologExtraBundle\Logger\Command\CommandLoggerInterface;
 
-class CommandListenerSpec extends ObjectBehavior
+class ConsoleCommandListenerSpec extends ObjectBehavior
 {
     public function let(CommandLoggerInterface $commandLogger)
     {
