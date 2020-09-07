@@ -35,7 +35,7 @@ class RequestLogger implements RequestLoggerInterface
      */
     public function createContexts(Request $request): array
     {
-        $map = [
+        return [
             'request_method' => $request->getMethod(),
             'request_uri' => $request->getRequestUri(),
             'request_route' => $request->attributes->get('_route'),
@@ -54,7 +54,5 @@ class RequestLogger implements RequestLoggerInterface
             'request_encodings' => $request->getEncodings(),
             'request_client_ips' => $request->getClientIps(),
         ];
-
-        return $map;
     }
 }

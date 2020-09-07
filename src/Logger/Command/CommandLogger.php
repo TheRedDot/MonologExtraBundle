@@ -38,7 +38,7 @@ class CommandLogger implements CommandLoggerInterface
      */
     public function createContexts(Command $command, InputInterface $input, OutputInterface $output): array
     {
-        $map = [
+        return [
             'command_name' => $command->getName(),
             'command_enabled' => $command->isEnabled(),
             'command_hidden' => $command->isHidden(),
@@ -46,7 +46,5 @@ class CommandLogger implements CommandLoggerInterface
             'command_options' => $input->getOptions(),
             'command_arguments' => $input->getArguments(),
         ];
-
-        return $map;
     }
 }

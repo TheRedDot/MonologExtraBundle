@@ -8,7 +8,7 @@ use Symfony\Component\Console\Event\ConsoleErrorEvent;
 class ConsoleExceptionListener
 {
     /**
-     * @var \Psr\Log\LoggerInterface
+     * @var LoggerInterface
      */
     protected $logger;
 

@@ -8,6 +8,8 @@ use TheRedDot\MonologExtraBundle\Provider\RequestId\RequestIdProviderInterface;
 
 class RequestIdResponseListener
 {
+    public const HEADER_KEY = 'X-Request-ID';
+
     /**
      * @var RequestIdProviderInterface
      */
@@ -28,6 +30,6 @@ class RequestIdResponseListener
             return;
         }
 
-        $event->getResponse()->headers->set('X-Request-ID', $this->requestIdProvider->getRequestId());
+        $event->getResponse()->headers->set(self::HEADER_KEY, $this->requestIdProvider->getRequestId());
     }
 }

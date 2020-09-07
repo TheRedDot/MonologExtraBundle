@@ -4,7 +4,7 @@
 
 [![Total Downloads](https://poser.pugx.org/TheRedDot/monolog-extra-bundle/downloads.png)](https://packagist.org/packages/TheRedDot/monolog-extra-bundle) [![Latest stable Version](https://poser.pugx.org/TheRedDot/monolog-extra-bundle/v/stable.png)](https://packagist.org/packages/TheRedDot/monolog-extra-bundle)
 
-Symfony bundle with extra processors and logger to log request/response.
+Symfony bundle with extra processors and logger to log request/response/command.
 
 ## Installation
 
@@ -105,6 +105,7 @@ Add the session id in each log entry.
 
 ```yaml
 the_red_dot_monolog_extra:
+    session_start: false
     processor:
         session_id: true
 ```

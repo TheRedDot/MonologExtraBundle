@@ -59,7 +59,7 @@ class ResponseLogger implements ResponseLoggerInterface
      */
     protected function createContext(Response $response, Request $request): array
     {
-        $context = [
+        return [
             'response_status_code' => $response->getStatusCode(),
             'response_charset' => $response->getCharset(),
             'response_date' => $response->getDate(),
@@ -76,7 +76,5 @@ class ResponseLogger implements ResponseLoggerInterface
             'response_time' => $this->getTime($request),
             'response_memory' => $this->getMemory(),
         ];
-
-        return $context;
     }
 }
