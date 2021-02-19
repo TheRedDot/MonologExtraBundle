@@ -1,7 +1,5 @@
 # MonologExtraBundle
 
-[![Build Status](https://api.travis-ci.org/TheRedDot/MonologExtraBundle.svg)](http://travis-ci.org/TheRedDot/MonologExtraBundle)
-
 [![Total Downloads](https://poser.pugx.org/TheRedDot/monolog-extra-bundle/downloads.png)](https://packagist.org/packages/TheRedDot/monolog-extra-bundle) [![Latest stable Version](https://poser.pugx.org/TheRedDot/monolog-extra-bundle/v/stable.png)](https://packagist.org/packages/TheRedDot/monolog-extra-bundle)
 
 Symfony bundle with extra processors and logger to log request/response/command.
