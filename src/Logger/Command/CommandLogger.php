@@ -30,10 +30,6 @@ class CommandLogger implements CommandLoggerInterface
     }
 
     /**
-     * @param Command         $command
-     * @param InputInterface  $input
-     * @param OutputInterface $output
-     *
      * @return array<string, mixed>
      */
     public function createContexts(Command $command, InputInterface $input, OutputInterface $output): array

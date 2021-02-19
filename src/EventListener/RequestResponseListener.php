@@ -2,10 +2,10 @@
 
 namespace TheRedDot\MonologExtraBundle\EventListener;
 
-use Symfony\Component\HttpKernel\Event\RequestEvent;
-use Symfony\Component\HttpKernel\Event\ResponseEvent;
 use Symfony\Component\HttpKernel\Event\FilterResponseEvent;
 use Symfony\Component\HttpKernel\Event\GetResponseEvent;
+use Symfony\Component\HttpKernel\Event\RequestEvent;
+use Symfony\Component\HttpKernel\Event\ResponseEvent;
 use Symfony\Component\HttpKernel\HttpKernel;
 use TheRedDot\MonologExtraBundle\Logger\Request\RequestLoggerInterface;
 use TheRedDot\MonologExtraBundle\Logger\Response\ResponseLoggerInterface;
