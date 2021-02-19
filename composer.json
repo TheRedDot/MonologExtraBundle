@@ -27,10 +27,7 @@
         "hexanet/monolog-extra-bundle": "self.version"
     },
     "require-dev": {
-        "phpspec/phpspec": "^5.1|^6.0",
-        "phpstan/phpstan": "^0.12.1",
-        "phpstan/phpstan-strict-rules": "^0.12.0",
-        "symplify/easy-coding-standard": "^9.1"
+        "phpspec/phpspec": "^5.1|^6.0"
     },
     "config": {
         "sort-packages": true
@@ -39,10 +36,6 @@
         "branch-alias": {
             "dev-master": "4.0-dev"
         }
-    },
-    "scripts": {
-        "cs-check": "vendor/bin/ecs check spec src",
-        "cs-fix": "vendor/bin/ecs check spec src --fix"
     },
     "autoload": {
         "psr-4": {
