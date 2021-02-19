@@ -29,8 +29,6 @@ class RequestLogger implements RequestLoggerInterface
     }
 
     /**
-     * @param Request $request
-     *
      * @return array<string, mixed>
      */
     public function createContexts(Request $request): array
