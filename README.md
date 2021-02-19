@@ -1,5 +1,7 @@
 # MonologExtraBundle
 
+**❗ This package is abandoned and no longer actively maintained.**
+
 [![Total Downloads](https://poser.pugx.org/TheRedDot/monolog-extra-bundle/downloads.png)](https://packagist.org/packages/TheRedDot/monolog-extra-bundle) [![Latest stable Version](https://poser.pugx.org/TheRedDot/monolog-extra-bundle/v/stable.png)](https://packagist.org/packages/TheRedDot/monolog-extra-bundle)
 
 Symfony bundle with extra processors and logger to log request/response/command.
